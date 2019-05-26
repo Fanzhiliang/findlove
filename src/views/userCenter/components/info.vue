@@ -6,6 +6,8 @@
         <span slot="title">二维码</span>
         <slot><i class="iconfont icon-code"></i></slot>
       </cell>
+
+      <popup-picker title="语言" :data="langList" value-text-align="left" v-model="tempLang" show-name></popup-picker>
     </group>
     <XDialog :show.sync="isShowCode" :hide-on-blur="true" @click.native="isShowCode=false">
       <div class="user-row">
@@ -69,17 +71,33 @@
 
 <script>
   import {mapGetters} from 'vuex'
-  import {Group,Cell,XDialog} from 'vux'
+  import {Group,Cell,XDialog,PopupPicker} from 'vux'
+  import {langList} from '@/lang'
+  
   export default {
-    components: {Group,Cell,XDialog},
+    components: {Group,Cell,XDialog,PopupPicker},
     data(){
       return{
-        isShowCode: false
+        isShowCode: false,
+        langList,
+        tempLang: []
+      }
+    },
+    watch:{
+      tempLang(val,oldVal){
+        let lang = val[0] || 'zh';
+        this.$store.commit('SET_LANG',lang);
+        if(oldVal.length>0){
+          this.$router.go(0);
+        }
       }
     },
     computed:{
-      ...mapGetters(['userInfo'])
+      ...mapGetters(['userInfo','lang'])
     },
+    created(){
+      this.tempLang = [this.lang];
+    }
   }
 </script>
 

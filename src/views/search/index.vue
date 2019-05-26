@@ -5,10 +5,10 @@
         <div class="select-type">
           {{obj.type[0]}}<i class="iconfont icon-down"></i>
           <div class="select-mask">
-            <PopupPicker :title="''" :data="typeList" v-model="obj.type"></PopupPicker>
+            <PopupPicker :title="''" :data="typeList" v-model="obj.type" :confirm-text="$t('confirm')" :cancel-text="$t('cancel')"></PopupPicker>
           </div>
         </div>
-        <input type="text" placeholder="请输入搜索内容" v-model="obj.keyword">
+        <input type="text" :placeholder="$t('placeholder.search')" v-model="obj.keyword">
         <div class="but"><i class="iconfont icon-search1"></i></div>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <span>广告</span>
     </div>
     <div class="hot-row">
-      <div class="hot-title">热门搜索</div>
+      <div class="hot-title">{{$t('hotSearch')}}</div>
       <div class="tags">
         <span @click="obj.keyword='广州'">广州</span>
         <span @click="obj.keyword='佛山'">佛山</span>
@@ -35,10 +35,10 @@
     data(){
       return{
         obj:{
-          type: ['全部'],
+          type: [this.$t('all')],
           keyword: ''
         },
-        typeList: [['全部','帖子','相亲']]
+        typeList: [[this.$t('all'),this.$t('post'),this.$t('blindDate')]]
       }
     }
   };
@@ -56,6 +56,7 @@
       border: 1px solid $gray-bg;
       border-radius: 3px;
       overflow: hidden;
+      position: relative;
       &>div{
         display: inline-block;
         padding: 0 0.5rem;
@@ -92,13 +93,15 @@
         font-size: 0.7rem;
       }
       .but{
-        float: right;
         width: 1.8rem;
         height: 100%;
         background-color: #FFAE0E;
         color: #fff;
         padding: 0;
         text-align: center;
+        position: absolute;
+        top: 0;
+        right: 0;
       }
     }
   }

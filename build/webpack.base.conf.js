@@ -98,6 +98,11 @@ const webpackConfig = {
 module.exports = vuxLoader.merge(webpackConfig,{
   plugins: [
     {name: 'vux-ui'},
-    {name: 'less-theme',path: 'src/styles/reset/vux-theme.less'}
+    {name: 'less-theme',path: 'src/styles/reset/vux-theme.less'},
+    // {//国际化
+    //   name: 'i18n',
+    //   vuxStaticReplace: true,
+    //   vuxLocale: 'en'
+    // }
   ]
 })

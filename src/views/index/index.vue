@@ -2,7 +2,7 @@
   <div class="index">
     <div class="banner-row">
       <div class="banner-title">
-        <p><span>公告</span>在这里祝大家劳动节快乐！</p>
+        <p><span>{{$t('notice')}}</span>在这里祝大家劳动节快乐！</p>
       </div>
       <div class="banner-main">
         <Swiper :list="bannerList" :loop="true" :auto="true" :interval="4000"></Swiper>
@@ -11,27 +11,27 @@
 
     <div class="three-col-row">
       <div class="row-item">
-        <h3>每日签到</h3>
+        <h3>{{$t('dailySign')}}</h3>
         <p>赚积分赢VIP</p>
       </div>
       <div class="row-item">
-        <h3>加入会员</h3>
+        <h3>{{$t('joinVip')}}</h3>
         <p>永久会员通用</p>
       </div>
       <div class="row-item">
-        <h3>积分转盘</h3>
+        <h3>{{$t('integralTurntable')}}</h3>
         <p>大奖等你来拿</p>
       </div>
       <div class="row-item">
-        <h3>意见反馈</h3>
+        <h3>{{$t('feedback')}}</h3>
         <p>一起共同进步</p>
       </div>
       <div class="row-item">
-        <h3>APP下载</h3>
+        <h3>{{$t('appDownload')}}</h3>
         <p>并没有</p>
       </div>
       <div class="row-item">
-        <h3>推广任务</h3>
+        <h3>{{$t('promotionTask')}}</h3>
         <p>推广兑换积分</p>
       </div>
     </div>
@@ -51,7 +51,7 @@
     
     <div class="recommend clearfix">
       <div class="title">
-        <p class="ellipsis">相亲展示</p>
+        <p class="ellipsis">{{$t('blindDateDisplay')}}</p>
         <span @click="$router.push('/blindDate/list')"><i class="iconfont icon-More"></i></span>
       </div>
       <div class="recommend-item" v-for="(item,index) in bindDateList" :key="index" @click="$router.push('/blindDate/detail/'+item.post_id)">
@@ -62,7 +62,7 @@
 
     <div class="recommend">
       <div class="title">
-        <p class="ellipsis">热帖排行</p>
+        <p class="ellipsis">{{$t('postRank')}}</p>
         <span @click="$router.push('/post/list')"><i class="iconfont icon-More"></i></span>
       </div>
       <div class="post-row" v-for="(item,index) in postList" :key="index" @click="$router.push('/post/detail/'+item.post_id)">
@@ -74,14 +74,14 @@
 
     <div class="recommend">
       <div class="title">
-        <p class="ellipsis">活动进行中</p>
+        <p class="ellipsis">{{$t('activitiesInProgress')}}</p>
         <span @click="$router.push('/activity/list')">More...</span>
       </div>
       <div class="recommend-row" v-for="(item,index) in activityList" :key="index" @click="$router.push('/activity/detail/'+item.post_id)">
         <img v-lazy="item.cover" alt="">
         <h3 class="ellipsis">{{item.title}}</h3>
-        <p class="ellipsis">时间：{{item.time}}</p>
-        <p class="ellipsis">类型：{{item.type}}</p>
+        <p class="ellipsis">{{$t('time')}}：{{item.time}}</p>
+        <p class="ellipsis">{{$t('type')}}：{{item.type}}</p>
       </div>
     </div>
   </div>
@@ -293,6 +293,7 @@
           color: $gray-text;
           font-size: 0.6rem;
           width: 10rem;
+          padding: 0.2rem 0;
         }
       }
       .recommend-item{

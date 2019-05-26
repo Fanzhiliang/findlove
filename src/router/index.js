@@ -23,7 +23,7 @@ let router = new Router({
           path: '/',
           component: () => import('@/views/index'),
           meta: {
-            title: '首页',
+            title: 'index',
             isShowSearch: true
           }
         },
@@ -31,7 +31,7 @@ let router = new Router({
           path: '/community',
           component: () => import('@/views/community'),
           meta: {
-            title: '社区',
+            title: 'community',
             isShowSearch: true
           }
         },
@@ -48,7 +48,7 @@ let router = new Router({
           path: '/sign',
           component: () => import('@/views/sign'),
           meta: {
-            title: '签到',
+            title: 'sign',
             isShowLeft: true
           }
         },
@@ -56,7 +56,7 @@ let router = new Router({
           path: '/search',
           component: () => import('@/views/search'),
           meta: {
-            title: '搜索',
+            title: 'search',
             isShowLeft: true
           }
         },
@@ -64,7 +64,7 @@ let router = new Router({
           path: '/publish',
           component: () => import('@/views/publish'),
           meta: {
-            title: '发帖',
+            title: 'publish',
             isShowLeft: true,
             hideFooter: true
           }
@@ -73,7 +73,7 @@ let router = new Router({
           path: '/userCenter',
           component: () => import('@/views/userCenter'),
           meta: {
-            title: '用户中心',
+            title: 'userCenter',
             isShowLeft: true,
             isShowMore: true,
             hideFooter: true,
@@ -84,7 +84,7 @@ let router = new Router({
           path: '/userCenter/edit',
           component: () => import('@/views/userCenter/edit'),
           meta: {
-            title: '资料设置',
+            title: 'userCenterEdit',
             isShowLeft: true
           }
         },
@@ -92,7 +92,7 @@ let router = new Router({
           path: '/blindDate/list',
           component: () => import('@/views/blindDate/list'),
           meta: {
-            title: '相亲列表',
+            title: 'blindDateList',
             isShowLeft: true,
             isShowSearch: true,
             isShowEdit: true
@@ -102,7 +102,7 @@ let router = new Router({
           path: '/blindDate/detail/:id',
           component: () => import('@/views/blindDate/detail'),
           meta: {
-            title: '相亲详情',
+            title: 'blindDateDetail',
             isShowLeft: true,
             hideFooter: true
           }
@@ -111,7 +111,7 @@ let router = new Router({
           path: '/activity/list',
           component: () => import('@/views/activity/list'),
           meta: {
-            title: '活动列表',
+            title: 'activityList',
             isShowLeft: true,
             isShowSearch: true,
             isShowEdit: true
@@ -121,7 +121,7 @@ let router = new Router({
           path: '/activity/detail/:id',
           component: () => import('@/views/activity/detail'),
           meta: {
-            title: '活动详情',
+            title: 'activityDetail',
             isShowLeft: true,
             hideFooter: true
           }
@@ -130,7 +130,7 @@ let router = new Router({
           path: '/post/list',
           component: () => import('@/views/post/list'),
           meta: {
-            title: '帖子列表',
+            title: 'postList',
             isShowLeft: true,
             isShowSearch: true,
             isShowEdit: true
@@ -140,7 +140,7 @@ let router = new Router({
           path: '/post/detail/:id',
           component: () => import('@/views/post/detail'),
           meta: {
-            title: '帖子详情',
+            title: 'postDeatil',
             isShowLeft: true,
             hideFooter: true
           }
@@ -149,7 +149,7 @@ let router = new Router({
           path: '/chat',
           component: () => import('@/views/chat'),
           meta: {
-            title: '聊天界面',
+            title: 'chat',
             isShowLeft: true,
             hideFooter: true
           }
@@ -158,7 +158,7 @@ let router = new Router({
           path: '/errorpage/:type',
           component: () => import('@/views/errorpage'),
           meta: {
-            title: '网站错误',
+            title: 'error',
             hideFooter: true,
             isShowLeft: true
           }
@@ -169,7 +169,7 @@ let router = new Router({
       path: '/login',
       component: () => import('@/views/formpage/login'),
       meta: {
-        title: '登录',
+        title: 'login',
         hideHeader: true,
         hideFooter: true
       }
@@ -178,7 +178,7 @@ let router = new Router({
       path: '/register',
       component: () => import('@/views/formpage/register'),
       meta: {
-        title: '注册',
+        title: 'register',
         hideHeader: true,
         hideFooter: true
       }
@@ -187,7 +187,7 @@ let router = new Router({
       path: '/forget',
       component: () => import('@/views/formpage/forget'),
       meta: {
-        title: '忘记密码',
+        title: 'forget',
         hideHeader: true,
         hideFooter: true
       }

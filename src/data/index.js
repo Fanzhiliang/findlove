@@ -1,3 +1,5 @@
+import i18n  from '../lang'
+
 export const emoticons = [
   {
     icon: '/static/img/emoticons/monkey/35.gif',
@@ -25,3 +27,24 @@ export const levelList = [
   {color:'#9DCA08',limit:320},{color:'#91B9EB',limit:640},{color:'#F37D7D',limit:1280},{color:'#DD0000',limit:2560},
   {color:'#c8a06a',limit:20}
 ]
+
+export const vipList = [
+  {key:i18n.t('monthlyMember'),value:i18n.t('monthlyMember'),money:49},
+  {key:i18n.t('quarterlyMember'),value:i18n.t('quarterlyMember'),money:99},
+  {key:i18n.t('halfYearMember'),value:i18n.t('halfYearMember'),money:149},
+  {key:i18n.t('annualMember'),value:i18n.t('annualMember'),money:199},
+  {key:i18n.t('permanentMember'),value:i18n.t('permanentMember'),money:299}
+]
+
+export const playList = [
+  {key:i18n.t('alipay'),value:i18n.t('alipayValue'),icon:'zhifubao',pic:'/static/img/zhifubao_code.jpg'},
+  {key:i18n.t('wechat'),value:i18n.t('wechatValue'),icon:'wechat',pic:'/static/img/weixin_code.jpg'},
+  {key:i18n.t('integral'),value:i18n.t('integralValue'),icon:'jifen',pic:'/static/img/jifen_pic.jpg'}
+]
+
+
+
+
+
+
+

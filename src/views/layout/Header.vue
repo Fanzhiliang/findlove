@@ -37,7 +37,7 @@
     </div>
 
     <div class="title textShadowBlack">
-      <span>{{$route.meta.title}}</span>
+      <span>{{$t($route.meta.title)}}</span>
     </div>
 
   </div>

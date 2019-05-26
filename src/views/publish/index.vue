@@ -3,22 +3,22 @@
     <div class="tab-row">
       <div class="inner">
         <tab :line-width="2">
-          <tab-item selected>发帖子</tab-item>
+          <tab-item selected>{{$t('Post')}}</tab-item>
         </tab>
       </div>
     </div>
 
     <group label-width="3em">
-      <x-input title="标题" placeholder="(必填)" v-model="obj.title" @click.native="inputFocus('goTop')"></x-input>
+      <x-input :title="$t('title')" :placeholder="$t('placeholder.required')" v-model="obj.title" @click.native="inputFocus('goTop')"></x-input>
 
-      <PopupRadio title="类型" placeholder="请选择" :options="typeList" v-model="obj.type" value-align="left"></PopupRadio>
+      <PopupRadio :title="$t('type')" :placeholder="$t('placeholder.select')" :options="typeList" v-model="obj.type" value-align="left"></PopupRadio>
 
-      <x-input title="时间" v-if="obj.type.includes('活动')" placeholder="(必填)" v-model="obj.time" @click.native="inputFocus('goTop')"></x-input>
+      <x-input :title="$t('time')" v-if="obj.type.includes('活动')" :placeholder="$t('placeholder.required')" v-model="obj.time" @click.native="inputFocus('goTop')"></x-input>
 
-      <x-input title="地点" v-if="obj.type.includes('活动')" placeholder="(必填)" v-model="obj.address" @click.native="inputFocus('goTop')"></x-input>
+      <x-input :title="$t('address')" v-if="obj.type.includes('活动')" :placeholder="$t('placeholder.required')" v-model="obj.address" @click.native="inputFocus('goTop')"></x-input>
 
       <div class="text-wrap">
-        <Tinymce ref="tinymce" v-model="obj.contnet" :toolbar="[]" :menubar="''" :height="180" placeholder="想和大家分享什么..."/>
+        <Tinymce ref="tinymce" v-model="obj.contnet" :toolbar="[]" :menubar="''" :height="180" :placeholder="$t('placeholder.share')"/>
       </div>
 
       <div class="imgs-row">
@@ -37,15 +37,15 @@
       <div class="toolbar-row">
         <div :class="['toolbar-item',{on:toggleIndex==0}]" @click="setToggleIndex(0)">
           <p><i class="iconfont icon-smile"></i></p>
-          <p>表情</p>
+          <p>{{$t('emoticons')}}</p>
         </div>
         <div :class="['toolbar-item',{on:toggleIndex==1}]" @click="setToggleIndex(1)">
           <p><i class="iconfont icon-callperson"></i></p>
-          <p>@朋友</p>
+          <p>{{$t('callfriend')}}</p>
         </div>
         <div :class="['toolbar-item',{on:toggleIndex==2}]" @click="setToggleIndex(2)">
           <p><i class="iconfont icon-link"></i></p>
-          <p>链接</p>
+          <p>{{$t('link')}}</p>
         </div>
       </div>
 
@@ -76,23 +76,23 @@
         <div class="toggle-item" v-show="toggleIndex==1" :key="1">
           <div>
             <div class="p-input-wrap">
-              <input type="text" class="p-input" placeholder="请输入用户名" v-model="callUser" @click="inputFocus('goBottom')">
-              <XButton type="primary" mini @click.native="insertCallUser">@添加</XButton>
+              <input type="text" class="p-input" :placeholder="$t('placeholder.username')" v-model="callUser" @click="inputFocus('goBottom')">
+              <XButton type="primary" mini @click.native="insertCallUser">@{{$t('add')}}</XButton>
             </div>
-            <p class="b-tip">@朋友账号，就能提醒他来看帖子</p>
+            <p class="b-tip">{{$t('remindFriend')}}</p>
           </div>
         </div>
         <!-- 链接 -->
         <div class="toggle-item" v-show="toggleIndex==2" :key="2">
           <div>
             <div class="p-input-wrap">
-              <input type="text" class="p-input" placeholder="请输入链接网站" v-model="linkHref" @click="inputFocus('goBottom')">
+              <input type="text" class="p-input" :placeholder="$t('placeholder.linkWebsite')" v-model="linkHref" @click="inputFocus('goBottom')">
             </div>
             <div class="p-input-wrap">
-              <input type="text" class="p-input" placeholder="请输入链接文字" v-model="linkName" @click="inputFocus('goBottom')">
+              <input type="text" class="p-input" :placeholder="$t('placeholder.linkText')" v-model="linkName" @click="inputFocus('goBottom')">
             </div>
             <div class="p-input-wrap no-border">
-              <XButton type="primary" mini @click.native="insertLink">插入</XButton>
+              <XButton type="primary" mini @click.native="insertLink">{{$t('insert')}}</XButton>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@
       </div>
 
       <div class="but-row">
-        <XButton type="primary" @click.native="submitData">发表</XButton>
+        <XButton type="primary" @click.native="submitData">{{$t('publishBut')}}</XButton>
       </div>
 
     </group>
@@ -152,7 +152,7 @@
       fileChange(e){
         let tempLength = e.target.files.length + this.obj.fileList.length;
         if(tempLength > this.maxFileLength){
-          this.$vux.toast.show({text: `最多上传${this.maxFileLength}张图片`});
+          this.$vux.toast.show({text: this.$t('uploadImgPrefix') + this.maxFileLength + this.$t('uploadImgSuffix') });
         }else{
           Array.prototype.forEach.call(e.target.files,async (file)=>{
             let srcBase64 = await imgToBase64(file);
@@ -190,9 +190,9 @@
       },
       insertCallUser(){//@朋友
         if(this.callUser.indexOf('@') != -1){
-          this.$vux.toast.show({text: '用户名不能带有@'});
+          this.$vux.toast.show({text: this.$t('usernameError')});
         }else if(!this.callUser){
-          this.$vux.toast.show({text: '请输入要@的朋友'});
+          this.$vux.toast.show({text: this.$t('usernameNull')});
         }else{
           this.$refs.tinymce.insertContent(`<span></span><a href="javascript:;" target="_blank" style="text-decoration: none;">@${this.callUser}</a><span></span>`);
           this.obj.callUsers.push(this.callUser);
@@ -202,7 +202,7 @@
       },
       insertLink(){//插入链接
         if(!this.linkName || !this.linkHref){
-          this.$vux.toast.show({text: '请输入链接文字和链接网站'});
+          this.$vux.toast.show({text: this.$t('linkNull')});
         }else{
           this.$refs.tinymce.insertContent(`<span></span><a href="${this.linkHref}" target="_blank" style="text-decoration: underline;"><em>${this.linkName}</em></a><span></span>`);
           this.linkHref = '';

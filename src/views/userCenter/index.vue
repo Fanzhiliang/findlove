@@ -39,7 +39,6 @@
   import friend from './components/friend'
   import msg from './components/msg'
   import follow from './components/follow'
-
   import ScrollTab from '@/components/ScrollTab'
   export default {
     components: {Tab,TabItem,Group,Cell,XDialog,info,post,photo,friend,msg,follow,ScrollTab},

@@ -12,19 +12,19 @@
         <!-- 登录框 -->
         <div class="form-panel">
           <div class="form-row">
-            <label><svg-icon iconClass="user" className="label-icon"></svg-icon>账号</label>
-            <input type="text" placeholder="请输入用户名" autocomplete="off" v-model="dataForm.username">
+            <label><svg-icon iconClass="user" className="label-icon"></svg-icon>{{$t('username')}}</label>
+            <input type="text" :placeholder="$t('placeholder.username')" autocomplete="off" v-model="dataForm.username">
           </div>
           <div class="form-row suffix">
-            <label><svg-icon iconClass="password" className="label-icon"></svg-icon>密码</label>
-            <input :type="isShowPassword?'text':'password'" placeholder="请输入密码" autocomplete="new-password" v-model="dataForm.password">
+            <label><svg-icon iconClass="password" className="label-icon"></svg-icon>{{$t('password')}}</label>
+            <input :type="isShowPassword?'text':'password'" :placeholder="$t('placeholder.password')" autocomplete="new-password" v-model="dataForm.password">
             <svg-icon v-if="isShowPassword" @click="isShowPassword=false" iconClass="eye-open" className="suffix-icon"></svg-icon>
             <svg-icon v-else @click="isShowPassword=true" iconClass="eye" className="suffix-icon"></svg-icon>
           </div>
-          <XButton type="primary" class="b-but" @click.native="goPuzzle">登录</XButton>
+          <XButton type="primary" class="b-but" @click.native="goPuzzle">{{$t('login')}}</XButton>
           <div class="link-row">
-            <router-link :to="'/register'" class="l">注册新账号</router-link>
-            <router-link :to="'/forget'" class="r">忘记密码</router-link>
+            <router-link :to="'/register'" class="l">{{$t('register')}}</router-link>
+            <router-link :to="'/forget'" class="r">{{$t('forget')}}</router-link>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
           <div class="puzzle-row">
             <Puzzle ref="puzzle" @finalHandler="submitData"/>
           </div>
-          <XButton type="primary" class="b-but" @click.native="step=1">返回</XButton>
+          <XButton type="primary" class="b-but" @click.native="step=1">{{$t('back')}}</XButton>
         </div>
       </div>
     </div>

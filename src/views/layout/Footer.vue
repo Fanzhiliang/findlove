@@ -2,11 +2,11 @@
   <div class="footer">
     <div :class="['footer-item',{on:$route.path=='/'}]" @click="$router.push('/')">
       <i class="iconfont icon-home"></i>
-      <span>首页</span>
+      <span>{{$t('index')}}</span>
     </div>
     <div :class="['footer-item',{on:$route.path=='/community'}]" @click="$router.push('/community')">
       <i class="iconfont icon-chat2"></i>
-      <span>社区</span>
+      <span>{{$t('community')}}</span>
     </div>
     <div class="footer-item big">
       <div class="publish" @click="$router.push('/publish')">
@@ -18,11 +18,11 @@
     </div>
     <div :class="['footer-item',{on:$route.path=='/vip'}]" @click="$router.push('/vip')">
       <i class="iconfont icon-group"></i>
-      <span>vip</span>
+      <span>{{$t('vip')}}</span>
     </div>
     <div :class="['footer-item',{on:$route.path=='/sign'}]" @click="$router.push('/sign')">
       <i class="iconfont icon-Sign"></i>
-      <span>签到</span>
+      <span>{{$t('sign')}}</span>
     </div>
   </div>
 </template>

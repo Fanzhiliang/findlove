@@ -11,29 +11,29 @@
         <!-- 登录框 -->
         <div class="form-panel">
           <div class="form-row">
-            <label><svg-icon iconClass="user" className="label-icon"></svg-icon>账号</label>
-            <input type="text" placeholder="请输入用户名" autocomplete="off" v-model="dataForm.username">
+            <label><svg-icon iconClass="user" className="label-icon"></svg-icon>{{$t('username')}}</label>
+            <input type="text" :placeholder="$t('placeholder.username')" autocomplete="off" v-model="dataForm.username">
           </div>
           <div class="form-row suffix">
-            <label><svg-icon iconClass="password" className="label-icon"></svg-icon>密码</label>
-            <input :type="isShowPassword?'text':'password'" placeholder="请输入密码" autocomplete="new-password" v-model="dataForm.password">
+            <label><svg-icon iconClass="password" className="label-icon"></svg-icon>{{$t('password')}}</label>
+            <input :type="isShowPassword?'text':'password'" :placeholder="$t('placeholder.password')" autocomplete="new-password" v-model="dataForm.password">
             <svg-icon v-if="isShowPassword" @click="isShowPassword=false" iconClass="eye-open" className="suffix-icon"></svg-icon>
             <svg-icon v-else @click="isShowPassword=true" iconClass="eye" className="suffix-icon"></svg-icon>
           </div>
           <div class="form-row suffix">
-            <label><svg-icon iconClass="sure" className="label-icon"></svg-icon>确认</label>
-            <input :type="isShowRePassword?'text':'password'" placeholder="请确认密码" autocomplete="new-password" v-model="dataForm.rePassword">
+            <label><svg-icon iconClass="sure" className="label-icon"></svg-icon>{{$t('rePassword')}}</label>
+            <input :type="isShowRePassword?'text':'password'" :placeholder="$t('placeholder.rePassword')" autocomplete="new-password" v-model="dataForm.rePassword">
             <svg-icon v-if="isShowRePassword" @click="isShowRePassword=false" iconClass="eye-open" className="suffix-icon"></svg-icon>
             <svg-icon v-else @click="isShowRePassword=true" iconClass="eye" className="suffix-icon"></svg-icon>
           </div>
           <div class="form-row suffix">
-            <label>验证码</label>
-            <input type="text" placeholder="关注公众号获得" autocomplete="off" v-model="dataForm.code">
+            <label>{{$t('code')}}</label>
+            <input type="text" :placeholder="$t('placeholder.code')" autocomplete="off" v-model="dataForm.code">
             <svg-icon iconClass="code" className="suffix-icon" @click="isShowCode=true"></svg-icon>
           </div>
-          <XButton type="primary" class="b-but" @click.native="submitData">注册</XButton>
+          <XButton type="primary" class="b-but" @click.native="submitData">{{$t('register')}}</XButton>
           <div class="link-row">
-            <router-link :to="'/login'" class="l">已有账号？马上登录>>></router-link>
+            <router-link :to="'/login'" class="l">{{$t('goLogin')}}>>></router-link>
           </div>
         </div>
       </div>
@@ -41,9 +41,7 @@
 
     <XDialog :show.sync="isShowCode" :hide-on-blur="true">
       <img src="/static/img/code.jpg" alt="">
-      <p class="tip">
-        关注公众号，发送"注册"二字即可获得验证码
-      </p>
+      <p class="tip">{{$t('followWechatTip')}}</p>
       <div @click="isShowCode=false"><span class="vux-close"></span></div>
     </XDialog>
     

@@ -11,7 +11,7 @@
       </div>
       <div class="bottom-row">
         <p class="ellipsis textShadowBlack">祝你早日暴富，生活愉快</p>
-        <span @click.stop="logout"><i class="iconfont icon-enter"></i>退出登录</span>
+        <span @click.stop="logout"><i class="iconfont icon-enter"></i>{{$t('logout')}}</span>
       </div>
       <div class="bottom-bg bg1"></div>
       <div class="bottom-bg bg2"></div>
@@ -27,17 +27,16 @@
 </template>
 
 <script>
-  const routerList = [//好看的颜色 #9DCA08 #91B9EB #F37D7D
-    {name: '首页',path: '/',icon: 'home',color:'#3EBBFD'},
-    {name: '社区',path: '/community',icon: 'chat2',color:'#FFB300'},
-    {name: '签到',path: '/sign',icon: 'Sign',color:'#DA99DB'}
-  ]
   import {mapGetters} from 'vuex'
   export default {
     props: ['isShow'],
     data(){
       return{
-        routerList
+        routerList: [//好看的颜色 #9DCA08 #91B9EB #F37D7D
+          {name: this.$t('index'),path: '/',icon: 'home',color:'#3EBBFD'},
+          {name: this.$t('community'),path: '/community',icon: 'chat2',color:'#FFB300'},
+          {name: this.$t('sign'),path: '/sign',icon: 'Sign',color:'#DA99DB'}
+        ]
       }
     },
     computed:{
@@ -46,10 +45,12 @@
     methods:{
       logout(){
         this.$vux.confirm.show({
-          title: '确定要退出登录吗？',
+          title: this.$t('logoutTip'),
+          confirmText: this.$t('confirm'),
+          cancelText: this.$t('cancel'),
           onConfirm : () => {
             this.$store.dispatch('logout').then((data)=>{
-              this.$vux.toast.show({text:'退出成功'});
+              this.$vux.toast.show({text:this.$t('logoutSuccess')});
               this.$router.push('/login');
             })
           }

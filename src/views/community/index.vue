@@ -6,20 +6,20 @@
         <div class="progress-inner" :style="{width:(integral*100/limit)+'%'}"></div>
       </div>
       <span class="rate"><span>{{integral}}</span>/{{limit}}</span>
-      <div class="sign-button" v-if="isSigned"><i class="iconfont icon-success"></i>已签到</div>
-      <div class="sign-button no-sign" v-else @click="sign">签到</div>
+      <div class="sign-button" v-if="isSigned"><i class="iconfont icon-success"></i>{{$t('signed')}}</div>
+      <div class="sign-button no-sign" v-else @click="sign">{{$t('sign')}}</div>
     </div>
     <div class="banner-row">
       <Swiper ref="swiper" :list="bannerList" :loop="true" :auto="true" :interval="4000" :show-dots="false" :show-desc-mask="false"></Swiper>
     </div>
     <div class="three-col-row">
       <div class="col-items clearfix">
-        <div class="col-item"><h3>今日发帖</h3><p>1367</p></div>
-        <div class="col-item"><h3>总帖数</h3><p>5712</p></div>
-        <div class="col-item"><h3>会员数</h3><p>947</p></div>
+        <div class="col-item"><h3>{{$t('postToday')}}</h3><p>1367</p></div>
+        <div class="col-item"><h3>{{$t('postTotal')}}</h3><p>5712</p></div>
+        <div class="col-item"><h3>{{$t('vipTotal')}}</h3><p>947</p></div>
       </div>
       <div class="swiper-row">
-        <span>公告</span>
+        <span>{{$t('notice')}}</span>
         <swiper auto :loop="true" height="30px" direction="vertical" :interval="2000" class="text-scroll" :show-dots="false">
           <swiper-item><p>给大家讲个笑话</p></swiper-item>
           <swiper-item><p>我的微信：QQ505911050</p></swiper-item>
@@ -28,26 +28,26 @@
     </div>
 
     <Group>
-      <XSwitch title="相亲板块" v-model="isShowBlinddate"></XSwitch>
+      <XSwitch :title="$t('blindDatePlate')" v-model="isShowBlinddate"></XSwitch>
       <el-collapse-transition>
         <div class="toggle-panel clearfix" v-show="isShowBlinddate">
           <a :href="item.href" class="path-item" v-for="(item,index) in blindDateList" :key="index">
             <img :src="item.img" alt="">
             <p class="title">{{item.title}}</p>
-            <p class="count">总数：{{item.count}}</p>
+            <p class="count">{{$t('total')}}：{{item.count}}</p>
           </a>
         </div>
       </el-collapse-transition>
     </Group>
 
     <Group>
-      <XSwitch title="论坛板块" v-model="isShowForum"></XSwitch>
+      <XSwitch :title="$t('forumPlate')" v-model="isShowForum"></XSwitch>
       <el-collapse-transition>
         <div class="toggle-panel clearfix" v-show="isShowForum">
           <a :href="item.href" class="path-item" v-for="(item,index) in forumList" :key="index">
             <img :src="item.img" alt="">
             <p class="title">{{item.title}}</p>
-            <p class="count">总数：{{item.count}}</p>
+            <p class="count">{{$t('total')}}：{{item.count}}</p>
           </a>
         </div>
       </el-collapse-transition>

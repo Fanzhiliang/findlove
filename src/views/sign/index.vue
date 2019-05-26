@@ -10,18 +10,18 @@
       </div>
       <div class="rank-row">
         <div class="rank-item">
-          <h3>今日排名</h3>
+          <h3>{{$t('todayRank')}}</h3>
           <p>996</p>
         </div>
         <div class="rank-item">
-          <h3>连续签到</h3>
+          <h3>{{$t('continuitySign')}}</h3>
           <p>
             4
             <span>天</span>
           </p>
         </div>
         <div class="rank-item">
-          <h3>累计签到</h3>
+          <h3>{{$t('totalSign')}}</h3>
           <p>
             12
             <span>天</span>
@@ -35,13 +35,13 @@
         :plain="!ableSign"
         :disabled="!ableSign"
         @click.native="ableSign=false"
-      >{{ableSign?'签到':'已签到'}}</XButton>
+      >{{ableSign?$t('sign'):$t('signed')}}</XButton>
     </div>
     <div class="flow-row">
       <tab>
-        <tab-item selected>今日排行</tab-item>
-        <tab-item>本月排行</tab-item>
-        <tab-item>总排行</tab-item>
+        <tab-item selected>{{$t('todayRank')}}</tab-item>
+        <tab-item>{{$t('monthRank')}}</tab-item>
+        <tab-item>{{$t('totalRank')}}</tab-item>
       </tab>
       <div class="flow-value">
         <div class="flow-item" v-for="(item,index) in signedList" :key="index">
@@ -51,7 +51,7 @@
           <div class="line"></div>
           <div class="info">
             <div class="name">{{item.name}} {{item.time}}</div>
-            <div class="timer">月天数{{item.month}}，总天数{{item.count}}</div>
+            <div class="timer">{{$t('monthDays')}}{{item.month}}，{{$t('totalDays')}}{{item.count}}</div>
           </div>
         </div>
       </div>

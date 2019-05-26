@@ -5,10 +5,10 @@
     </div>
 
     <group>
-      <cell title="我的账号" :value="userInfo.username"></cell>
-      <popup-radio title="会员类型" :options="vipList" v-model="obj.vipType" placeholder="选择会员类型"></popup-radio>
-      <cell title="应支付" :value="playMoney"></cell>
-      <popup-radio title="支付方式" :options="playList" v-model="obj.playType" placeholder="选择支付方式">
+      <cell :title="$t('myAccount')" :value="userInfo.username"></cell>
+      <popup-radio :title="$t('vipType')" :options="vipList" v-model="obj.vipType" :placeholder="$t('placeholder.selectVipType')"></popup-radio>
+      <cell :title="$t('payable')" :value="playMoney"></cell>
+      <popup-radio :title="$t('payType')" :options="playList" v-model="obj.playType" :placeholder="$t('placeholder.selectpayType')">
         <template slot-scope="props" slot="each-item">
           <i :class="'iconfont playType icon-'+playList[props.index].icon"></i>{{props.label}}
         </template>
@@ -19,23 +19,23 @@
         </div>
       </cell>
       <div class="play-but-row">
-        <XButton :type="ablePay?'primary':''" :plain="!ablePay" :disabled="!ablePay" class="play-but" @click.native="payHandler">开通vip会员</XButton>
+        <XButton :type="ablePay?'primary':''" :plain="!ablePay" :disabled="!ablePay" class="play-but" @click.native="payHandler">{{$t('vipBut')}}</XButton>
       </div>
     </group>
 
     <div class="table-row">
-      <load-more tip="会员有什么福利？" :show-loading="false" background-color="#fbf9fe"></load-more>
+      <load-more :tip="$t('whatVip')" :show-loading="false" background-color="#fbf9fe"></load-more>
       <x-table :cell-bordered="false" :content-bordered="false" style="background-color:#fff;">
         <thead>
           <tr>
-            <th>普通用户</th>
-            <th>vip会员</th>
+            <th>{{$t('ordinaryMember')}}</th>
+            <th>{{$t('ordinaryMemberValue')}}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>只能浏览不能看到联系方式</td>
-            <td>不仅能看到联系方式还可以私聊对方进行了解</td>
+            <td>{{$t('vipMembership')}}</td>
+            <td>{{$t('vipMembershipValue')}}</td>
           </tr>
         </tbody>
       </x-table>
@@ -47,6 +47,7 @@
 <script>
   import { Swiper,Group,PopupRadio,Cell,XButton,XTable,LoadMore } from 'vux'
   import {mapGetters} from 'vuex'
+  import {vipList,playList} from '@/data'
   export default {
     components:{Swiper,Group,PopupRadio,Cell,XButton,XTable,LoadMore},
     data(){
@@ -58,15 +59,8 @@
           vipType: '',
           playType: ''
         },
-        vipList: [
-          {key:'月会员',value:'月会员',money:49},{key:'季会员',value:'季会员',money:99},{key:'半年会员',value:'半年会员',money:149},
-          {key:'年会员',value:'年会员',money:199},{key:'永久会员',value:'永久会员',money:299}
-        ],
-        playList: [
-          {key:'支付宝',value:'支付宝支付',icon:'zhifubao',pic:'/static/img/zhifubao_code.jpg'},
-          {key:'微信',value:'微信支付',icon:'wechat',pic:'/static/img/weixin_code.jpg'},
-          {key:'积分',value:'积分支付',icon:'jifen',pic:'/static/img/jifen_pic.jpg'}
-        ]
+        vipList,
+        playList
       }
     },
     computed:{
@@ -75,7 +69,7 @@
         let tempArr = this.vipList.filter((item)=>{
           return item.key == this.obj.vipType;
         })
-        return tempArr.length == 1 ? tempArr[0].money+'元' : '请选择会员类型';
+        return tempArr.length == 1 ? tempArr[0].money+'元' : this.$t('placeholder.selectVipTypeFirst');
       },
       picSrc(){
         let tempArr = this.playList.filter((item)=>{
@@ -105,11 +99,15 @@
   .vip{
     padding-bottom: 1rem;
     .table-row{
-      padding: 0 0.5rem;
+      padding: 5px 0.5rem;
     }
-    .vux-table td{
-      padding: 0 10px;
+    .vux-table td,.vux-table th{
+      padding: 5px 10px;
       line-height: normal;
+      text-align: left;
+      &:first-of-type{
+        width: 4em;
+      }
     }
   }
   

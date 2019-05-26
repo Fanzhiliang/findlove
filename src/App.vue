@@ -7,9 +7,13 @@
 </template>
 
 <script>
-  
   export default {
-    name: 'App'
+    name: 'App',
+    watch:{
+      $route(route){//更改标题
+        document.querySelector('title').innerHTML = this.$t(route.meta.title);
+      }
+    },
   }
 </script>
 

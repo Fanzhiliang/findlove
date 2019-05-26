@@ -5,11 +5,11 @@
     <div class="code-container">
       <img src="/static/img/code.jpg" alt="">
       <div class="tip">
-        关注公众号，发送"忘记密码"四字，系统便会帮你找回密码
+        {{$t('forgetTip')}}
       </div>
     </div>
     <div style="text-align: center;">
-      <XButton type="primary" mini @click.native="$router.push('/login')">返回登录</XButton>
+      <XButton type="primary" mini @click.native="$router.push('/login')">{{$t('backLogin')}}</XButton>
     </div>
   </div>
 </template>
