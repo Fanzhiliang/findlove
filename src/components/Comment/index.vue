@@ -3,13 +3,13 @@
     <div class="comment-header">
       <h3>全部评论 <span>50</span></h3>
       <i class="iconfont icon-sortaltup">倒序浏览</i>
-      <i class="iconfont icon-eye">只看楼主</i> 
+      <i class="iconfont icon-eye">只看楼主</i>
     </div>
     <div class="comment-list">
 
       <div class="comment-item">
         <div class="left-col">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="right-col">
           <div class="comment-userInfo">
@@ -19,7 +19,7 @@
           </div>
           <div class="comment-content">
             <p>大家好，可以多多留言，如果遇到骗子一定要向管理员举报！<br></p>
-            <p><img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/monkey/12.gif" data-mce-src="static/img/emoticons/monkey/12.gif" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/monkey/11.gif" data-mce-src="static/img/emoticons/monkey/11.gif" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/monkey/35.gif" data-mce-src="static/img/emoticons/monkey/35.gif" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"></p>
+            <p><img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/monkey/12.gif" data-mce-src="/static/img/emoticons/monkey/12.gif" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/monkey/11.gif" data-mce-src="/static/img/emoticons/monkey/11.gif" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/monkey/35.gif" data-mce-src="/static/img/emoticons/monkey/35.gif" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"></p>
           </div>
           <div class="bottom-row">
             <span class="time">2019-05-16 10:04</span>
@@ -32,7 +32,7 @@
 
       <div class="comment-item">
         <div class="left-col">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="right-col">
           <div class="comment-userInfo">
@@ -40,7 +40,7 @@
             <span :style="{'background-color': levelList[2-1].color}">Lv2 月会员</span>
           </div>
           <div class="comment-content">
-            <p>怎么每个页面下面的评论都一样的？<img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/face/fFace_01.png" data-mce-src="../../static/img/emoticons/face/fFace_01.png" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><br><br></p>
+            <p>怎么每个页面下面的评论都一样的？<img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/face/fFace_01.png" data-mce-src="/static/img/emoticons/face/fFace_01.png" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><br><br></p>
           </div>
           <div class="bottom-row">
             <span class="time">2019-05-16 10:04</span>
@@ -53,7 +53,7 @@
 
       <div class="comment-item">
         <div class="left-col">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="right-col">
           <div class="comment-userInfo">
@@ -64,7 +64,7 @@
           <div class="callUser">
             <p>樊致良 发表于 2019-05-16 10:04</p>
             <div>
-              <p>怎么每个页面下面的评论都一样的？<img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/face/fFace_01.png" data-mce-src="../../static/img/emoticons/face/fFace_01.png" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><br><br></p>
+              <p>怎么每个页面下面的评论都一样的？<img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/face/fFace_01.png" data-mce-src="/static/img/emoticons/face/fFace_01.png" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><br><br></p>
             </div>
           </div>
           <div class="comment-content">
@@ -140,8 +140,8 @@
         <!-- 选择图片 -->
         <div class="toggle-item" v-show="toggleIndex==1" :key="1">
           <div class="imgs-row">
-            <div class="img-item" 
-            v-for="(item,index) in imgSrcs" :key="index" 
+            <div class="img-item"
+            v-for="(item,index) in imgSrcs" :key="index"
             :style="{'background-image':`url(${item})`}"
             @click="removeSrc(index)">
               <i class="iconfont icon-offline"></i>
@@ -162,19 +162,19 @@
     <div :class="['share',{on:isShowShare}]" @click="isShowShare=false">
       <div class="share-main" @click.stop="">
         <div class="share-item">
-          <div class="top"><img src="/static/img/qq.svg" alt=""></div>
+          <div class="top"><img src="http://findloveimg.alcyh.com/qq.svg" alt=""></div>
           <p>QQ</p>
         </div>
         <div class="share-item">
-          <div class="top"><img src="/static/img/wechat.svg" alt=""></div>
+          <div class="top"><img src="http://findloveimg.alcyh.com/wechat.svg" alt=""></div>
           <p>微信</p>
         </div>
         <div class="share-item">
-          <div class="top"><img src="/static/img/weibo.svg" alt=""></div>
+          <div class="top"><img src="http://findloveimg.alcyh.com/weibo.svg" alt=""></div>
           <p>微博</p>
         </div>
         <div class="share-button" @click="isShowShare=false">取消</div>
-      </div> 
+      </div>
     </div>
   </div>
 </template>

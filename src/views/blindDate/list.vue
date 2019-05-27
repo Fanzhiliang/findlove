@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="post-header">
-      <img src="/static/img/a01.png" alt="">
+      <img src="http://findloveimg.alcyh.com/a01.png" alt="">
       <h3>广州相亲</h3>
       <p class="num">
         <span>今日:128</span><span>帖子:6841324</span><span>今日:128</span>
@@ -21,7 +21,7 @@
             <div class="bottom-info">
               <h3 class="ellipsis">{{item.title}}</h3>
               <p>
-                <img src="/static/img/default-head.gif" alt="">
+                <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
                 {{item.user.username}}
                 <span><i class="iconfont icon-chatlinemtui"></i>{{item.comment}}</span>
               </p>
@@ -35,7 +35,7 @@
             <div class="bottom-info">
               <h3 class="ellipsis">{{item.title}}</h3>
               <p>
-                <img src="/static/img/default-head.gif" alt="">
+                <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
                 {{item.user.username}}
                 <span><i class="iconfont icon-chatlinemtui"></i>{{item.comment}}</span>
               </p>

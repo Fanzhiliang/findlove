@@ -3,7 +3,7 @@
     <div class="userInfo" @click="$router.push('/userCenter')">
       <div class="top-row">
         <div class="head-wrap">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
       </div>
       <div class="middle-row textShadowBlack">
@@ -77,7 +77,7 @@
     .userInfo{
       height: 8.5rem;
       padding: 0 0.6rem;
-      background-image: url('/static/img/sidebar_bg.jpg');
+      background-image: url('http://findloveimg.alcyh.com/sidebar_bg.jpg');
       background-size: cover;
       position: relative;
       overflow: hidden;
@@ -146,11 +146,11 @@
         background-size: 450px;
         &.bg1{
           bottom: 0;
-          background-image: url('/static/img/comiis_a.svg');
+          background-image: url('http://findloveimg.alcyh.com/comiis_a.svg');
           animation: bg-move 4s infinite linear;
         }
         &.bg2{
-          background-image: url('/static/img/comiis_b.svg');
+          background-image: url('http://findloveimg.alcyh.com/comiis_b.svg');
           animation: bg-move 5s infinite linear;
         }
       }

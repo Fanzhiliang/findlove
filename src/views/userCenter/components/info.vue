@@ -11,11 +11,11 @@
     </group>
     <XDialog :show.sync="isShowCode" :hide-on-blur="true" @click.native="isShowCode=false">
       <div class="user-row">
-        <img src="/static/img/default-head.gif" alt="">
+        <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         <div class="username">{{userInfo.username}}</div>
         <div class="info">扫扫二维码，关注该用户</div>
       </div>
-      <img src="/static/img/code.jpg" alt="">
+      <img src="http://findloveimg.alcyh.com/code.jpg" alt="">
     </XDialog>
 
     <div class="icons-row">

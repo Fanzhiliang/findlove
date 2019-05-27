@@ -1,7 +1,7 @@
 <template>
   <div class="item-list">
     <div class="row-item" v-for="(item,index) in friendlist" :key="index">
-      <img src="/static/img/default-head.gif" alt="">
+      <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
       <h3 class="ellipsis">{{item.username}}</h3>
       <p class="ellipsis">{{item.sign}}</p>
     </div>

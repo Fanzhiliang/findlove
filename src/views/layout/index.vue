@@ -18,11 +18,11 @@
 
       <!-- 底部 -->
       <Footer v-show="!hideFooter"></Footer>
-      
+
     </Drawer>
-    
+
   </div>
-  
+
 </template>
 
 <script>

@@ -3,7 +3,7 @@
     <div class="head" v-show="!isShowLeft">
       <svg-icon iconClass="more" className="more" @click="toggleSiderbar"></svg-icon>
       <div class="head-img" @click="toggleSiderbar">
-        <img src="/static/img/default-head.gif" alt="">
+        <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
       </div>
     </div>
 

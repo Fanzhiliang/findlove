@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="post-header">
-      <img src="/static/img/a03.png" alt="">
+      <img src="http://findloveimg.alcyh.com/a03.png" alt="">
       <h3>公告活动</h3>
       <p class="num">
         <span>今日:76128</span><span>帖子:38324</span><span>今日:128</span>

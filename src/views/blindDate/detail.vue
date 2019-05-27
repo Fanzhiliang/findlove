@@ -2,7 +2,7 @@
   <div class="post-detail" v-if="obj.user">
     <h2 class="title ellipsis">{{obj.title}}</h2>
     <div class="userInfo">
-      <img src="/static/img/default-head.gif" alt="">
+      <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
       <div class="name">
         {{obj.user.username}}
         <span :style="{'background-color': levelList[obj.user.level-1].color}">Lv{{obj.user.level}} 永久会员</span>

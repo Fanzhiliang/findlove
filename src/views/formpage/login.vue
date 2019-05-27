@@ -7,7 +7,7 @@
       <div class="toggle-inner">
         <!-- logo -->
         <div class="logo-row" @click="$router.push('/')">
-          <img src="/static/img/logo.jpg" alt="">
+          <img src="http://findloveimg.alcyh.com/logo.jpg" alt="">
         </div>
         <!-- 登录框 -->
         <div class="form-panel">

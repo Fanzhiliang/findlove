@@ -2,7 +2,7 @@
   <div class="post-detail" v-if="obj.user">
     <h2 class="title ellipsis">{{obj.title}}</h2>
     <div class="userInfo">
-      <img src="/static/img/default-head.gif" alt="">
+      <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
       <div class="name">
         {{obj.user.username}}
         <span :style="{'background-color': levelList[obj.user.level-1].color}">Lv{{obj.user.level}} 永久会员</span>
@@ -26,7 +26,7 @@
     <!-- 打赏框 -->
     <x-dialog v-model="isShowDialog">
       <div class="dialog-userInfo">
-        <img src="/static/img/default-head.gif" alt="">
+        <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         <p class="username">{{obj.user.username}}</p>
         <p class="t">发帖不易，打赏一下楼主吧</p>
         <span @click="isShowDialog=false" class="vux-close"></span>

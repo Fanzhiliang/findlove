@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="ad-row">
-      <img src="/static/img/banner_5.jpg" alt="">
+      <img src="http://findloveimg.alcyh.com/banner_5.jpg" alt="">
       <span>广告</span>
     </div>
     <div class="hot-row">

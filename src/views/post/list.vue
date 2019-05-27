@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="post-header">
-      <img src="/static/img/a02.png" alt="">
+      <img src="http://findloveimg.alcyh.com/a02.png" alt="">
       <h3>吐槽分享</h3>
       <p class="num">
         <span>今日:87964</span><span>帖子:4516</span><span>今日:321</span>
@@ -15,7 +15,7 @@
       <div class="list">
         <div class="item" v-for="(item,index) in list" :key="index" @click="goPost(index)">
           <div class="left-col">
-            <img src="/static/img/default-head.gif" alt="">
+            <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
           </div>
           <div class="right-col">
             <div class="name">

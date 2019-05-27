@@ -9,11 +9,11 @@ export default{
   data(){
     return{
       bgUrls: [
-        '/static/img/comiis_bg_1.jpg',
-        '/static/img/comiis_bg_2.jpg',
-        '/static/img/comiis_bg_3.jpg',
-        '/static/img/comiis_bg_4.jpg',
-        '/static/img/comiis_bg_5.jpg'
+        'http://findloveimg.alcyh.com/comiis_bg_1.jpg',
+        'http://findloveimg.alcyh.com/comiis_bg_2.jpg',
+        'http://findloveimg.alcyh.com/comiis_bg_3.jpg',
+        'http://findloveimg.alcyh.com/comiis_bg_4.jpg',
+        'http://findloveimg.alcyh.com/comiis_bg_5.jpg'
       ],
       bgIndex: 0,//当前背景下标
       bgTimer: null,

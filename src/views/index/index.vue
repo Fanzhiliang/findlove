@@ -37,7 +37,7 @@
     </div>
 
     <div class="headline">
-      <img src="/static/img/toutiao_ico.png" alt="">
+      <img src="http://findloveimg.alcyh.com/toutiao_ico.png" alt="">
       <h3>给你们来段绕口令</h3>
       <p class="more-ellipsis">一位爷爷他姓顾，上街打醋又买布。买了布，打了醋，回头看见鹰抓兔。放下布，搁下醋，上前去追鹰和兔，飞了鹰，跑了兔。打翻醋，醋湿布。</p>
     </div>
@@ -96,29 +96,29 @@
         bannerList: [
           {
             url: 'javascript:',
-            img: '/static/img/banner_1.jpg',
+            img: 'http://findloveimg.alcyh.com/banner_1.jpg',
             title: '我也能找到吗？'
           },
           {
             url: 'javascript:',
-            img: '/static/img/banner_2.jpg',
+            img: 'http://findloveimg.alcyh.com/banner_2.jpg',
             title: '在仅有一次的生命'
           },
           {
             url: 'javascript:',
-            img: '/static/img/banner_3.jpg',
+            img: 'http://findloveimg.alcyh.com/banner_3.jpg',
             title: 'Seven777'
           }
         ],
         linkList: [
-          {href:'javascript:;',img:'/static/img/a01.png',title:'广州相亲',path:'/blindDate/list'},
-          {href:'javascript:;',img:'/static/img/a02.png',title:'吐槽分享',path:'/post/list'},
-          {href:'javascript:;',img:'/static/img/a03.png',title:'公告活动',path:'/activity/list'},
-          {href:'javascript:;',img:'/static/img/a04.png',title:'佛山相亲',path:'/blindDate/list'},
-          {href:'javascript:;',img:'/static/img/a05.png',title:'中山相亲',path:'/blindDate/list'},
-          {href:'javascript:;',img:'/static/img/a06.png',title:'惠州相亲',path:'/blindDate/list'},
-          {href:'javascript:;',img:'/static/img/a07.png',title:'汕头相亲',path:'/blindDate/list'},
-          {href:'javascript:;',img:'/static/img/a08.png',title:'东莞相亲',path:'/blindDate/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a01.png',title:'广州相亲',path:'/blindDate/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a02.png',title:'吐槽分享',path:'/post/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a03.png',title:'公告活动',path:'/activity/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a04.png',title:'佛山相亲',path:'/blindDate/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a05.png',title:'中山相亲',path:'/blindDate/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a06.png',title:'惠州相亲',path:'/blindDate/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a07.png',title:'汕头相亲',path:'/blindDate/list'},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a08.png',title:'东莞相亲',path:'/blindDate/list'},
         ],
         activityList: [],
         bindDateList: [],

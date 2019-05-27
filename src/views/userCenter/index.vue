@@ -3,7 +3,7 @@
     <div class="userInfo">
       <div class="top-row">
         <div class="head-wrap">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <h3 class="textShadowBlack">{{userInfo.username}}</h3>
         <p class="textShadowBlack"><span :style="{'background-color': levelList[userInfo.level-1].color}">Lv{{userInfo.level}}</span>永久会员</p>

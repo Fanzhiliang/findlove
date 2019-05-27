@@ -6,7 +6,7 @@
       <div class="toggle-inner">
         <!-- logo -->
         <div class="logo-row" @click="$router.push('/')">
-          <img src="/static/img/logo.jpg" alt="">
+          <img src="http://findloveimg.alcyh.com/logo.jpg" alt="">
         </div>
         <!-- 登录框 -->
         <div class="form-panel">
@@ -40,7 +40,7 @@
     </div>
 
     <XDialog :show.sync="isShowCode" :hide-on-blur="true">
-      <img src="/static/img/code.jpg" alt="">
+      <img src="http://findloveimg.alcyh.com/code.jpg" alt="">
       <p class="tip">{{$t('followWechatTip')}}</p>
       <div @click="isShowCode=false"><span class="vux-close"></span></div>
     </XDialog>

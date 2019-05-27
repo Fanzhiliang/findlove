@@ -66,29 +66,29 @@
         bannerList: [
           {
             url: 'javascript:',
-            img: '/static/img/ver-1.png'
+            img: 'http://findloveimg.alcyh.com/ver-1.png'
           },
           {
             url: 'javascript:',
-            img: '/static/img/ver-2.png'
+            img: 'http://findloveimg.alcyh.com/ver-2.png'
           },
           {
             url: 'javascript:',
-            img: '/static/img/ver-3.png'
+            img: 'http://findloveimg.alcyh.com/ver-3.png'
           }
         ],
         levelList,
         blindDateList: [
-          {href:'javascript:;',img:'/static/img/a01.png',title:'广州相亲',count:141},
-          {href:'javascript:;',img:'/static/img/a04.png',title:'佛山相亲',count:73},
-          {href:'javascript:;',img:'/static/img/a05.png',title:'中山相亲',count:25},
-          {href:'javascript:;',img:'/static/img/a06.png',title:'惠州相亲',count:8},
-          {href:'javascript:;',img:'/static/img/a07.png',title:'汕头相亲',count:90},
-          {href:'javascript:;',img:'/static/img/a08.png',title:'东莞相亲',count:101},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a01.png',title:'广州相亲',count:141},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a04.png',title:'佛山相亲',count:73},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a05.png',title:'中山相亲',count:25},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a06.png',title:'惠州相亲',count:8},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a07.png',title:'汕头相亲',count:90},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a08.png',title:'东莞相亲',count:101},
         ],
         forumList: [
-          {href:'javascript:;',img:'/static/img/a02.png',title:'吐槽分享',count:2436},
-          {href:'javascript:;',img:'/static/img/a03.png',title:'公示公告',count:3},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a02.png',title:'吐槽分享',count:2436},
+          {href:'javascript:;',img:'http://findloveimg.alcyh.com/a03.png',title:'公示公告',count:3},
         ],
         isSigned: false,
         isShowBlinddate: true,

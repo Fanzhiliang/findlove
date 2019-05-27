@@ -6,18 +6,18 @@
       <div class="chat-item">
         <div class="time">2019-05-16 09:15:32</div>
         <div class="head">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="content">
           <p>你好123<br></p>
-          <p>哈哈<img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="/static/img/emoticons/face/fFace_02.png" data-mce-src="../../static/img/emoticons/face/fFace_02.png" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><br data-mce-bogus="1"></p>
+          <p>哈哈<img style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;" src="http://findloveimg.alcyh.com/emoticons/face/fFace_02.png" data-mce-src="../..http://findloveimg.alcyh.com/emoticons/face/fFace_02.png" data-mce-style="width: 20px; height: 20px; margin-right: 3px; display: inline-block; vertical-align: text-bottom;"><br data-mce-bogus="1"></p>
         </div>
       </div>
 
       <div class="chat-item my">
         <div class="time">2019-05-17 22:05:06</div>
         <div class="head">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="content">
           <img v-lazy="'http://ws.alcyh.com/resources/2_1552392520_0.jpg'" alt="">
@@ -27,7 +27,7 @@
       <div class="chat-item my">
         <div class="time">2019-05-17 22:05:06</div>
         <div class="head">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="content">
           <p>给你发个图</p>
@@ -37,7 +37,7 @@
       <div class="chat-item">
         <div class="time">2019-05-17 22:05:06</div>
         <div class="head">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="content">
           <a href="http://ws.alcyh.com/resources/6_1557883413_0.zip" target="_blank">http://ws.alcyh.com/resources/6_1557883413_0.zip</a>
@@ -47,7 +47,7 @@
       <div class="chat-item">
         <div class="time">2019-05-17 22:05:06</div>
         <div class="head">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="content">
           <p>这是一个下载链接</p>
@@ -57,7 +57,7 @@
       <div class="chat-item">
         <div class="time">2019-05-17 22:05:06</div>
         <div class="head">
-          <img src="/static/img/default-head.gif" alt="">
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         </div>
         <div class="content">
           <p>你下来看看呗</p>

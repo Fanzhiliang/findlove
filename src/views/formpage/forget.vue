@@ -3,7 +3,7 @@
     <!-- 背景 -->
     <bg></bg>
     <div class="code-container">
-      <img src="/static/img/code.jpg" alt="">
+      <img src="http://findloveimg.alcyh.com/code.jpg" alt="">
       <div class="tip">
         {{$t('forgetTip')}}
       </div>

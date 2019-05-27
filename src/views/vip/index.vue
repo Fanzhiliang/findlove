@@ -53,7 +53,7 @@
     data(){
       return{
         bannerList: [
-          {url: 'javascript:',img: '/static/img/banner_4.jpg',title: '会员中心'}
+          {url: 'javascript:',img: 'http://findloveimg.alcyh.com/banner_4.jpg',title: '会员中心'}
         ],
         obj: {
           vipType: '',

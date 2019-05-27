@@ -3,7 +3,7 @@
     <div class="userInfo">
       <div class="info-inner">
         <div class="head">
-          <img src="/static/img/default-head.gif" alt>
+          <img src="http://findloveimg.alcyh.com/default-head.gif" alt>
         </div>
         <p class="name textShadowBlack ellipsis">{{userInfo.username}}</p>
         <p class="level textShadowBlack ellipsis">Lv{{userInfo.level}}</p>
@@ -46,7 +46,7 @@
       <div class="flow-value">
         <div class="flow-item" v-for="(item,index) in signedList" :key="index">
           <div class="user-head">
-            <img v-lazy="'/static/img/default-head.gif'" alt>
+            <img v-lazy="'http://findloveimg.alcyh.com/default-head.gif'" alt>
           </div>
           <div class="line"></div>
           <div class="info">
@@ -86,7 +86,7 @@ export default {
 .sign {
   background-color: #fff;
   .userInfo {
-    background-image: url("/static/img/sidebar_bg.jpg");
+    background-image: url("http://findloveimg.alcyh.com/sidebar_bg.jpg");
     background-size: cover;
     height: 10rem;
     overflow: hidden;
