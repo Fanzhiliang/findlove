@@ -28,8 +28,8 @@
         <div class="toggle-mask" v-show="showMoreList" @click.stop="showMoreList=false">
           <el-collapse-transition>
             <div class="toggle-list" v-show="showMoreList">
-              <div class="list-item" @click="$router.push('/userCenter/edit')">{{$t('updateUser')}}</div>
-              <div class="list-item" @click="$router.push('/')">{{$t('backIndex')}}</div>
+              <div class="list-item" @click="$router.push('/userCenter/edit')">更新个人资料</div>
+              <div class="list-item" @click="$router.push('/')">返回首页</div>
             </div>
           </el-collapse-transition>
         </div>

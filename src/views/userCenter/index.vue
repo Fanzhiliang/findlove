@@ -19,10 +19,10 @@
     <div class="footer-wrap">
       <div class="center-footer">
         <div class="footer-item" @click="addFriend">
-          <span><i class="iconfont icon-tianjiayonghu"></i>{{$t('addFriend')}}</span>
+          <span><i class="iconfont icon-tianjiayonghu"></i>加好友</span>
         </div>
         <div class="footer-item" @click="$router.push('/chat')">
-          <span><i class="iconfont icon-chatlinemtui"></i>{{$t('chatText')}}</span>
+          <span><i class="iconfont icon-chatlinemtui"></i>聊天</span>
         </div>
       </div>
     </div>
@@ -47,12 +47,12 @@
         path: '',
         levelList,
         tabList: [
-          {name:this.$t('data'),component:'info'},
-          {name:this.$t('post'),component:'post'},
-          {name:this.$t('photos'),component:'photo'},
-          {name:this.$t('friends'),component:'friend'},
-          {name:this.$t('message'),component:'msg'},
-          {name:this.$t('follow'),component:'follow'},
+          {name:'资料',component:'info'},
+          {name:'帖子',component:'post'},
+          {name:'相册',component:'photo'},
+          {name:'好友',component:'friend'},
+          {name:'消息',component:'msg'},
+          {name:'关注',component:'follow'},
         ],
         tabIndex: 0,
         tabLimit: 0,

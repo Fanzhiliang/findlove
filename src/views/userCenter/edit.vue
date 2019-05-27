@@ -1,27 +1,27 @@
 <template>
   <div class="edit-user">
-    <group label-width="6em" label-align="left">
-      <x-input :title="$t('realName')" v-model="obj.name"></x-input>
+    <group label-width="5em" label-align="left">
+      <x-input title="真实姓名" v-model="obj.name"></x-input>
 
-      <popup-radio :title="$t('gender')" :options="sexList" value-align="left" v-model="obj.sex" :confirm-text="$t('confirm')" :cancel-text="$t('cancel')"></popup-radio>
+      <popup-radio title="性别" :options="sexList" value-align="left" v-model="obj.sex"></popup-radio>
 
-      <datetime :title="$t('birthday')" :min-year="1970" v-model="obj.birthday" value-text-align="left" :confirm-text="$t('confirm')" :cancel-text="$t('cancel')"></datetime>
+      <datetime title="生日" :min-year="1970" v-model="obj.birthday" value-text-align="left"></datetime>
 
-      <x-address :title="$t('birthdayPlace')" :list="ChinaAddressData" value-text-align="left" v-model="obj.birth_address" :confirm-text="$t('confirm')" :cancel-text="$t('cancel')"></x-address>
+      <x-address title="出生地" :list="ChinaAddressData" value-text-align="left" v-model="obj.birth_address"></x-address>
 
-      <x-address :title="$t('livePlace')" :list="ChinaAddressData" value-text-align="left" v-model="obj.live_address" :confirm-text="$t('confirm')" :cancel-text="$t('cancel')"></x-address>
+      <x-address title="居住地" :list="ChinaAddressData" value-text-align="left" v-model="obj.live_address"></x-address>
     </group>
 
     <group label-width="5em" label-align="left">
-      <x-input :title="$t('affective')" v-model="obj.status"></x-input>
+      <x-input title="情感状态" v-model="obj.status"></x-input>
 
-      <x-input :title="$t('objective')" v-model="obj.objective"></x-input>
+      <x-input title="交友目的" v-model="obj.objective"></x-input>
 
-      <popup-picker :title="$t('bloodType')" :data="bloodTypeList" value-text-align="left" v-model="obj.bloodType" :confirm-text="$t('confirm')" :cancel-text="$t('cancel')"></popup-picker>
+      <popup-picker title="血型" :data="bloodTypeList" value-text-align="left" v-model="obj.bloodType"></popup-picker>
     </group>
 
     <div class="button-row">
-      <XButton type="primary" @click.native="submitData">{{$t('save')}}</XButton>
+      <XButton type="primary" @click.native="submitData">保存</XButton>
     </div>
   </div>
 </template>
