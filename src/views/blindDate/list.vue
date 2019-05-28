@@ -7,16 +7,16 @@
         <span>今日:128</span><span>帖子:6841324</span><span>今日:128</span>
       </p>
       <p class="info">广州板块，可以按下面的分区进行筛选</p>
-      <XButton v-if="ableFollow" @click.native="ableFollow=false" class="follow-button" mini type="primary"><i class="iconfont icon-add"></i>关注</XButton>
-      <XButton v-else @click.native="ableFollow=true" class="follow-button disabled" mini :plain="true">已关注</XButton>
+      <XButton v-if="ableFollow" @tap.native="ableFollow=false" class="follow-button" mini type="primary"><i class="iconfont icon-add"></i>关注</XButton>
+      <XButton v-else @tap.native="ableFollow=true" class="follow-button disabled" mini :plain="true">已关注</XButton>
     </div>
 
     <div class="blindDate-list">
       <ScrollTab v-model="tabIndex" :list="tabList" :scrollTop="tabLimit" :fixedTop="'2.3rem'" @on-before-index-change="switchTabItem"/>
-      
+
       <div class="list">
         <div :class="['col-list',{'too-long':isTooLong=='left'}]" v-if="leftColList.length>0">
-          <div class="list-item" v-for="(item,index) in leftColList" :key="index" @click="$router.push('/blindDate/detail/'+item.post_id)">
+          <div class="list-item" v-for="(item,index) in leftColList" :key="index" @tap="$router.push('/blindDate/detail/'+item.post_id)">
             <img v-lazy="item.imgUrls && item.imgUrls.length>0 ? item.imgUrls[0] : item.cover" alt="">
             <div class="bottom-info">
               <h3 class="ellipsis">{{item.title}}</h3>
@@ -30,7 +30,7 @@
         </div>
 
         <div :class="['col-list',{'too-long':isTooLong=='right'}]" v-if="rightColList.length>0">
-          <div class="list-item" v-for="(item,index) in rightColList" :key="index" @click="$router.push('/blindDate/detail/'+item.post_id)">
+          <div class="list-item" v-for="(item,index) in rightColList" :key="index" @tap="$router.push('/blindDate/detail/'+item.post_id)">
             <img v-lazy="item.imgUrls && item.imgUrls.length>0 ? item.imgUrls[0] : item.cover" alt="">
             <div class="bottom-info">
               <h3 class="ellipsis">{{item.title}}</h3>
@@ -42,7 +42,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
 
       <Pager :pageNo.sync="params.pageNo" :totalSize="params.totalSize"/>
@@ -56,8 +56,10 @@
   import {getBlindDateList} from '@/api/post'
   import ScrollTab from '@/components/ScrollTab'
   import Pager from '@/components/Pager'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components:{XButton,Tab,TabItem,ScrollTab,Pager},
+    mixins: [iScroll],
     data(){
       return{
         params:{

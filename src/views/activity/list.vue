@@ -7,13 +7,13 @@
         <span>今日:76128</span><span>帖子:38324</span><span>今日:128</span>
       </p>
       <p class="info">下列活动都已经经过官方审核</p>
-      <XButton v-if="ableFollow" @click.native="ableFollow=false" class="follow-button" mini type="primary"><i class="iconfont icon-add"></i>关注</XButton>
-      <XButton v-else @click.native="ableFollow=true" class="follow-button disabled" mini :plain="true">已关注</XButton>
+      <XButton v-if="ableFollow" @tap.native="ableFollow=false" class="follow-button" mini type="primary"><i class="iconfont icon-add"></i>关注</XButton>
+      <XButton v-else @tap.native="ableFollow=true" class="follow-button disabled" mini :plain="true">已关注</XButton>
     </div>
 
     <div class="activity-list">
       <div class="list">
-        <div class="item" v-for="(item,index) in list" :key="index" @click="$router.push('/activity/detail/'+item.post_id)">
+        <div class="item" v-for="(item,index) in list" :key="index" @tap="$router.push('/activity/detail/'+item.post_id)">
           <img :src="item.cover" alt="">
           <p class="ellipsis">{{item.title}}<i class="iconfont icon-user">{{item.join}}</i></p>
         </div>
@@ -28,8 +28,10 @@
   import {XButton,Tab,TabItem} from 'vux'
   import {getActivityList} from '@/api/post'
   import Pager from '@/components/Pager'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components:{XButton,Tab,TabItem,Pager},
+    mixins: [iScroll],
     data(){
       return{
         params:{

@@ -19,10 +19,10 @@
     <div class="hot-row">
       <div class="hot-title">{{$t('hotSearch')}}</div>
       <div class="tags">
-        <span @click="obj.keyword='广州'">广州</span>
-        <span @click="obj.keyword='佛山'">佛山</span>
-        <span @click="obj.keyword='相亲'">相亲</span>
-        <span @click="obj.keyword='吐槽'">吐槽</span>
+        <span @tap="obj.keyword='广州'">广州</span>
+        <span @tap="obj.keyword='佛山'">佛山</span>
+        <span @tap="obj.keyword='相亲'">相亲</span>
+        <span @tap="obj.keyword='吐槽'">吐槽</span>
       </div>
     </div>
   </div>

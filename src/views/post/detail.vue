@@ -21,7 +21,7 @@
     </div>
 
     <div class="mini-button-row">
-      <div class="button" @click="isShowDialog=true">打赏</div>
+      <div class="button" @tap="isShowDialog=true">打赏</div>
     </div>
     <!-- 打赏框 -->
     <x-dialog v-model="isShowDialog">
@@ -29,7 +29,7 @@
         <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         <p class="username">{{obj.user.username}}</p>
         <p class="t">发帖不易，打赏一下楼主吧</p>
-        <span @click="isShowDialog=false" class="vux-close"></span>
+        <span @tap="isShowDialog=false" class="vux-close"></span>
       </div>
       <div class="input-panel">
         <div class="row integral">
@@ -57,8 +57,10 @@
   import {levelList} from '@/data'
   import Comment from '@/components/Comment'
   import {XDialog,XButton,XSwitch} from 'vux'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components:{Comment,XDialog,XButton,XSwitch},
+    mixins: [iScroll],
     data(){
       return{
         post_id: '',

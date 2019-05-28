@@ -7,7 +7,7 @@
       </div>
       <span class="rate"><span>{{integral}}</span>/{{limit}}</span>
       <div class="sign-button" v-if="isSigned"><i class="iconfont icon-success"></i>{{$t('signed')}}</div>
-      <div class="sign-button no-sign" v-else @click="sign">{{$t('sign')}}</div>
+      <div class="sign-button no-sign" v-else @tap="sign">{{$t('sign')}}</div>
     </div>
     <div class="banner-row">
       <Swiper ref="swiper" :list="bannerList" :loop="true" :auto="true" :interval="4000" :show-dots="false" :show-desc-mask="false"></Swiper>

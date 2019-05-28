@@ -1,7 +1,7 @@
 <template>
   <div class="photo-list">
     <div class="img-wrap" v-for="(item,index) in photoList" :key="index">
-      <img class="inner-img" v-lazy="item.src" @click="show(index)"/>
+      <img class="inner-img" v-lazy="item.src" @tap="show(index)"/>
     </div>
 
     <div v-transfer-dom>

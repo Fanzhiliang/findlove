@@ -9,7 +9,7 @@
       </div>
     </div>
     <div style="text-align: center;">
-      <XButton type="primary" mini @click.native="$router.push('/login')">{{$t('backLogin')}}</XButton>
+      <XButton type="primary" mini @tap.native="$router.push('/login')">{{$t('backLogin')}}</XButton>
     </div>
   </div>
 </template>

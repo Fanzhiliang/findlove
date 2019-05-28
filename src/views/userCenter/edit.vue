@@ -21,7 +21,7 @@
     </group>
 
     <div class="button-row">
-      <XButton type="primary" @click.native="submitData">保存</XButton>
+      <XButton type="primary" @tap.native="submitData">保存</XButton>
     </div>
   </div>
 </template>

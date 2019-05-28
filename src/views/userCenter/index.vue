@@ -18,10 +18,10 @@
 
     <div class="footer-wrap">
       <div class="center-footer">
-        <div class="footer-item" @click="addFriend">
+        <div class="footer-item" @tap="addFriend">
           <span><i class="iconfont icon-tianjiayonghu"></i>加好友</span>
         </div>
-        <div class="footer-item" @click="$router.push('/chat')">
+        <div class="footer-item" @tap="$router.push('/chat')">
           <span><i class="iconfont icon-chatlinemtui"></i>聊天</span>
         </div>
       </div>
@@ -40,8 +40,10 @@
   import msg from './components/msg'
   import follow from './components/follow'
   import ScrollTab from '@/components/ScrollTab'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components: {Tab,TabItem,Group,Cell,XDialog,info,post,photo,friend,msg,follow,ScrollTab},
+    mixins: [iScroll],
     data(){
       return{
         path: '',

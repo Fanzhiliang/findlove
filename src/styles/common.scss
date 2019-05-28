@@ -49,3 +49,40 @@
 #nprogress .bar{
   z-index: 9999!important;
 }
+
+/*滚动条*/
+.iScrollHorizontalScrollbar{/*这个样式应用到横向滚动条的容器。这个元素实际上承载了滚动条指示器。*/
+
+}
+.iScrollVerticalScrollbar{/*和上面的样式类似，只不过适用于纵向滚动条容器。*/
+  position: absolute;
+  z-index: 9999;
+  width: 2px;
+  bottom: 2px;
+  top: 2px;
+  right: 0;
+  overflow: visible!important;
+}
+.iScrollIndicator{/*真正的滚动条指示器。*/
+  position: absolute;
+  width: 1.5rem;
+  height: 2.5rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 1rem;
+  margin-left: -1.5rem;
+  &::after{
+    content: '';
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAA1ElEQVR4nO3cQQ3DQBAEQUMwBEMMhDAI5MszQXBeq6ukQXD9suQ9DgAAAAAAAAAAAAAgaq31tlE7dz7+uZjmEkCbAOIEECeAOAHECSBOAHECiBNA3PYAXjZq+z4FAwAAAAAAAAAAAAAAzzbgRwj72+7HPxfTXAJoE0CcAOIEECeAOAHECSBOAHECiNsewN3n0e2uc/EAAAAAAAAAAAAAAMCzrQF3ccyNIH4uAbQJIE4AcQKIE0CcAOIEECeAOAHEbQ/gY6O2LwAAAAAAAAAAAAAAYJAvMueixadS3r0AAAAASUVORK5CYII=');
+    background-size: contain;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+.iScrollBothScrollbars{/*这个样式将在双向滚动条显示的情况下被加载到容器元素上。通常情况下其中一个（横向或者纵向）是可见的*/
+
+}
+

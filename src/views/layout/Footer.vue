@@ -1,26 +1,26 @@
 <template>
   <div class="footer">
-    <div :class="['footer-item',{on:$route.path=='/'}]" @click="$router.push('/')">
+    <div :class="['footer-item',{on:$route.path=='/'}]" @tap="$router.push('/')">
       <i class="iconfont icon-home"></i>
       <span>{{$t('index')}}</span>
     </div>
-    <div :class="['footer-item',{on:$route.path=='/community'}]" @click="$router.push('/community')">
+    <div :class="['footer-item',{on:$route.path=='/community'}]" @tap="$router.push('/community')">
       <i class="iconfont icon-chat2"></i>
       <span>{{$t('community')}}</span>
     </div>
     <div class="footer-item big">
-      <div class="publish" @click="$router.push('/publish')">
+      <div class="publish" @tap="$router.push('/publish')">
         <div class="publish-mask"></div>
         <div class="publish-main">
           <i class="iconfont icon-add"></i>
         </div>
       </div>
     </div>
-    <div :class="['footer-item',{on:$route.path=='/vip'}]" @click="$router.push('/vip')">
+    <div :class="['footer-item',{on:$route.path=='/vip'}]" @tap="$router.push('/vip')">
       <i class="iconfont icon-group"></i>
       <span>{{$t('vip')}}</span>
     </div>
-    <div :class="['footer-item',{on:$route.path=='/sign'}]" @click="$router.push('/sign')">
+    <div :class="['footer-item',{on:$route.path=='/sign'}]" @tap="$router.push('/sign')">
       <i class="iconfont icon-Sign"></i>
       <span>{{$t('sign')}}</span>
     </div>

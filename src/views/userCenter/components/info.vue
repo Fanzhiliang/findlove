@@ -2,14 +2,14 @@
   <div class="info">
     <group label-width="5em">
       <cell title="个人签名" value="这家伙很懒，什么也没留下..." value-align="left"></cell>
-      <cell is-link value-align="left" @click.native="isShowCode=true">
+      <cell is-link value-align="left" @tap.native="isShowCode=true">
         <span slot="title">二维码</span>
         <slot><i class="iconfont icon-code"></i></slot>
       </cell>
 
       <popup-picker title="语言" :data="langList" value-text-align="left" v-model="tempLang" show-name></popup-picker>
     </group>
-    <XDialog :show.sync="isShowCode" :hide-on-blur="true" @click.native="isShowCode=false">
+    <XDialog :show.sync="isShowCode" :hide-on-blur="true" @tap.native="isShowCode=false">
       <div class="user-row">
         <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
         <div class="username">{{userInfo.username}}</div>

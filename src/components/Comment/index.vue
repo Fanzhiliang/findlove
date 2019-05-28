@@ -185,8 +185,10 @@
   import {emoticons} from '@/data'
   import {XButton,Swiper,SwiperItem} from "vux"
   import {imgToBase64} from '@/utils'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components:{Tinymce,XButton,Swiper,SwiperItem},
+    mixins: [iScroll],
     data(){
       return{
         levelList,

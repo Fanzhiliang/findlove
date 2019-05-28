@@ -6,7 +6,7 @@
       <!-- 表单信息 -->
       <div class="toggle-inner">
         <!-- logo -->
-        <div class="logo-row" @click="$router.push('/')">
+        <div class="logo-row" @tap="$router.push('/')">
           <img src="http://findloveimg.alcyh.com/logo.jpg" alt="">
         </div>
         <!-- 登录框 -->
@@ -18,10 +18,10 @@
           <div class="form-row suffix">
             <label><svg-icon iconClass="password" className="label-icon"></svg-icon>{{$t('password')}}</label>
             <input :type="isShowPassword?'text':'password'" :placeholder="$t('placeholder.password')" autocomplete="new-password" v-model="dataForm.password">
-            <svg-icon v-if="isShowPassword" @click="isShowPassword=false" iconClass="eye-open" className="suffix-icon"></svg-icon>
-            <svg-icon v-else @click="isShowPassword=true" iconClass="eye" className="suffix-icon"></svg-icon>
+            <svg-icon v-if="isShowPassword" @tap="isShowPassword=false" iconClass="eye-open" className="suffix-icon"></svg-icon>
+            <svg-icon v-else @tap="isShowPassword=true" iconClass="eye" className="suffix-icon"></svg-icon>
           </div>
-          <XButton type="primary" class="b-but" @click.native="goPuzzle">{{$t('login')}}</XButton>
+          <XButton type="primary" class="b-but" @tap.native="goPuzzle">{{$t('login')}}</XButton>
           <div class="link-row">
             <router-link :to="'/register'" class="l">{{$t('register')}}</router-link>
             <router-link :to="'/forget'" class="r">{{$t('forget')}}</router-link>
@@ -34,7 +34,7 @@
           <div class="puzzle-row">
             <Puzzle ref="puzzle" @finalHandler="submitData"/>
           </div>
-          <XButton type="primary" class="b-but" @click.native="step=1">{{$t('back')}}</XButton>
+          <XButton type="primary" class="b-but" @tap.native="step=1">{{$t('back')}}</XButton>
         </div>
       </div>
     </div>

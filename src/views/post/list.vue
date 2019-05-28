@@ -7,13 +7,13 @@
         <span>今日:87964</span><span>帖子:4516</span><span>今日:321</span>
       </p>
       <p class="info">分享你的所见所闻，禁止发布黄毒赌内容！</p>
-      <XButton v-if="ableFollow" @click.native="ableFollow=false" class="follow-button" mini type="primary"><i class="iconfont icon-add"></i>关注</XButton>
-      <XButton v-else @click.native="ableFollow=true" class="follow-button disabled" mini :plain="true">已关注</XButton>
+      <XButton v-if="ableFollow" @tap.native="ableFollow=false" class="follow-button" mini type="primary"><i class="iconfont icon-add"></i>关注</XButton>
+      <XButton v-else @tap.native="ableFollow=true" class="follow-button disabled" mini :plain="true">已关注</XButton>
     </div>
 
     <div class="post-list">
       <div class="list">
-        <div class="item" v-for="(item,index) in list" :key="index" @click="goPost(index)">
+        <div class="item" v-for="(item,index) in list" :key="index" @tap="goPost(index)">
           <div class="left-col">
             <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
           </div>
@@ -26,11 +26,11 @@
             <div class="content more-ellipsis">{{item.content}}</div>
             <div class="time">
               {{item.time}}
-              <div class="toogle" ref="toggleMore" @click.stop="">
-                <span><i class="iconfont icon-chatlinemtui" @click="goPost(index)">评论</i></span>
-                <span><i class="iconfont icon-heart1" @click="like(index)">点赞</i></span>
+              <div class="toogle" ref="toggleMore" @tap.stop="">
+                <span><i class="iconfont icon-chatlinemtui" @tap="goPost(index)">评论</i></span>
+                <span><i class="iconfont icon-heart1" @tap="like(index)">点赞</i></span>
               </div>
-              <i class="iconfont icon-more" @click.stop="toggleMore(index)"></i>
+              <i class="iconfont icon-more" @tap.stop="toggleMore(index)"></i>
             </div>
             <div class="img-row">
               <img v-for="(it,i) in item.imgUrls" :key="i" :src="it" alt="">
@@ -64,8 +64,10 @@
   import Pager from '@/components/Pager'
   import {levelList} from '@/data'
   import {html2Text,toggleClass} from '@/utils'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components:{XButton,Tab,TabItem,Pager},
+    mixins: [iScroll],
     data(){
       return{
         params:{

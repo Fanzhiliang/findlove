@@ -19,7 +19,7 @@
         </div>
       </cell>
       <div class="play-but-row">
-        <XButton :type="ablePay?'primary':''" :plain="!ablePay" :disabled="!ablePay" class="play-but" @click.native="payHandler">{{$t('vipBut')}}</XButton>
+        <XButton :type="ablePay?'primary':''" :plain="!ablePay" :disabled="!ablePay" class="play-but" @tap.native="payHandler">{{$t('vipBut')}}</XButton>
       </div>
     </group>
 

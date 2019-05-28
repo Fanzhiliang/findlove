@@ -32,7 +32,7 @@
     </div>
 
     <div class="mini-button-row">
-      <div class="button" @click="join">报名参加</div>
+      <div class="button" @tap="join">报名参加</div>
     </div>
 
     <Comment />
@@ -43,8 +43,10 @@
   import {getActivityList} from '@/api/post'
   import {levelList} from '@/data'
   import Comment from '@/components/Comment'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components:{Comment},
+    mixins: [iScroll],
     data(){
       return{
         post_id: '',

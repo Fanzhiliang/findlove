@@ -1,6 +1,6 @@
 <template>
   <div class="item-list">
-    <div class="row-item" v-for="(item,index) in friendlist" :key="index" @click="$router.push(item.path)">
+    <div class="row-item" v-for="(item,index) in friendlist" :key="index" @tap="$router.push(item.path)">
       <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
       <h3 class="ellipsis">{{item.name}}</h3>
       <p class="ellipsis">

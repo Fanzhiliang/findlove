@@ -43,18 +43,18 @@
     </div>
 
     <div class="links-row">
-      <a :href="item.href" class="link" v-for="(item,index) in linkList" :key="index" @click="$router.push(item.path)">
+      <a :href="item.href" class="link" v-for="(item,index) in linkList" :key="index" @tap="$router.push(item.path)">
         <img :src="item.img" alt="">
         <p>{{item.title}}</p>
       </a>
     </div>
-    
+
     <div class="recommend clearfix">
       <div class="title">
         <p class="ellipsis">{{$t('blindDateDisplay')}}</p>
-        <span @click="$router.push('/blindDate/list')"><i class="iconfont icon-More"></i></span>
+        <span @tap="$router.push('/blindDate/list')"><i class="iconfont icon-More"></i></span>
       </div>
-      <div class="recommend-item" v-for="(item,index) in bindDateList" :key="index" @click="$router.push('/blindDate/detail/'+item.post_id)">
+      <div class="recommend-item" v-for="(item,index) in bindDateList" :key="index" @tap="$router.push('/blindDate/detail/'+item.post_id)">
         <img v-lazy="item.cover" alt="">
         <p class="ellipsis">{{item.title}}</p>
       </div>
@@ -63,9 +63,9 @@
     <div class="recommend">
       <div class="title">
         <p class="ellipsis">{{$t('postRank')}}</p>
-        <span @click="$router.push('/post/list')"><i class="iconfont icon-More"></i></span>
+        <span @tap="$router.push('/post/list')"><i class="iconfont icon-More"></i></span>
       </div>
-      <div class="post-row" v-for="(item,index) in postList" :key="index" @click="$router.push('/post/detail/'+item.post_id)">
+      <div class="post-row" v-for="(item,index) in postList" :key="index" @tap="$router.push('/post/detail/'+item.post_id)">
         <span class="num">{{index+1}}</span>
         <p class="ellipsis">{{item.title}}</p>
         <span class="comment">{{item.comment}}</span>
@@ -75,9 +75,9 @@
     <div class="recommend">
       <div class="title">
         <p class="ellipsis">{{$t('activitiesInProgress')}}</p>
-        <span @click="$router.push('/activity/list')">More...</span>
+        <span @tap="$router.push('/activity/list')">More...</span>
       </div>
-      <div class="recommend-row" v-for="(item,index) in activityList" :key="index" @click="$router.push('/activity/detail/'+item.post_id)">
+      <div class="recommend-row" v-for="(item,index) in activityList" :key="index" @tap="$router.push('/activity/detail/'+item.post_id)">
         <img v-lazy="item.cover" alt="">
         <h3 class="ellipsis">{{item.title}}</h3>
         <p class="ellipsis">{{$t('time')}}：{{item.time}}</p>
@@ -90,7 +90,9 @@
 <script>
   import { Swiper } from 'vux'
   import {getBlindDateList,getActivityList,getPostList} from '@/api/post'
+  import iScroll from '@/utils/IScroll/index.js'
   export default {
+    mixins: [iScroll],
     data(){
       return{
         bannerList: [
@@ -126,15 +128,12 @@
       }
     },
     created(){
-      getBlindDateList({pageSize:6}).then((data)=>{
-        this.bindDateList = data.list;
-      })
-      getActivityList({pageSize:3}).then((data)=>{
-        this.activityList = data.list;
-      })
-      getPostList({pageSize:6}).then((data)=>{
-        this.postList = data.list;
-      })
+      this.$axios.all([getBlindDateList({pageSize:6}), getActivityList({pageSize:3}), getPostList({pageSize:6})])
+      .then(this.$axios.spread((blindDateData, activityData, postData)=>{
+        this.bindDateList = blindDateData.list;
+        this.activityList = activityData.list;
+        this.postList = postData.list;
+      }));
     },
     components:{Swiper},
   }
@@ -287,7 +286,7 @@
           font-size: 0.75rem;
           width: 10rem;
           line-height: 1rem;
-          padding-bottom: 0.2rem; 
+          padding-bottom: 0.2rem;
         }
         p{
           color: $gray-text;
@@ -359,7 +358,7 @@
           background-color: #999999;
           text-align: center;
           font-size: 0.6rem;
-          
+
         }
         p{
           height: 1rem;
