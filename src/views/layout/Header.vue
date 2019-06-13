@@ -1,35 +1,35 @@
 <template>
   <div :class="['header',{transparent:isTransparent}]" :style="transparentStyle">
     <div class="head" v-show="!isShowLeft">
-      <svg-icon iconClass="more" className="more" @tap="toggleSiderbar"></svg-icon>
-      <div class="head-img" @tap="toggleSiderbar">
+      <svg-icon iconClass="more" className="more" @click="toggleSiderbar"></svg-icon>
+      <div class="head-img" @click="toggleSiderbar">
         <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
       </div>
     </div>
 
-    <div class="icons-row left no-padding" v-show="isShowLeft" @tap="goBack">
+    <div class="icons-row left no-padding" v-show="isShowLeft" @click="goBack">
       <div class="icon-item">
         <i class="iconfont icon-left"></i>
       </div>
     </div>
-    
+
     <div class="icons-row right">
-      <div class="icon-item" v-show="isShowSearch" @tap="$router.push('/search')">
+      <div class="icon-item" v-show="isShowSearch" @click="$router.push('/search')">
         <i class="iconfont icon-search1"></i>
       </div>
-      <div class="icon-item" v-show="isShowEdit" @tap="$router.push('/publish')">
+      <div class="icon-item" v-show="isShowEdit" @click="$router.push('/publish')">
         <i class="iconfont icon-edit1"></i>
       </div>
-      <div class="icon-item" v-show="isShowHome" @tap="$router.push('/userCenter')">
+      <div class="icon-item" v-show="isShowHome" @click="$router.push('/userCenter')">
         <i class="iconfont icon-home"></i>
       </div>
-      <div class="icon-item" v-show="isShowMore" @tap="showMoreList=true">
+      <div class="icon-item" v-show="isShowMore" @click="showMoreList=true">
         <i class="iconfont icon-More"></i>
-        <div class="toggle-mask" v-show="showMoreList" @tap.stop="showMoreList=false">
+        <div class="toggle-mask" v-show="showMoreList" @click.stop="showMoreList=false">
           <el-collapse-transition>
             <div class="toggle-list" v-show="showMoreList">
-              <div class="list-item" @tap="$router.push('/userCenter/edit')">更新个人资料</div>
-              <div class="list-item" @tap="$router.push('/')">返回首页</div>
+              <div class="list-item" @click="$router.push('/userCenter/edit')">更新个人资料</div>
+              <div class="list-item" @click="$router.push('/')">返回首页</div>
             </div>
           </el-collapse-transition>
         </div>
@@ -94,7 +94,7 @@
           this.transparent = temp;
         })
       }
-      
+
     }
   }
 </script>
@@ -194,7 +194,7 @@
             }
           }
         }
-        
+
       }
     }
   }

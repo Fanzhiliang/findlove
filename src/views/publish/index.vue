@@ -9,13 +9,13 @@
     </div>
 
     <group label-width="3em">
-      <x-input :title="$t('title')" :placeholder="$t('placeholder.required')" v-model="obj.title" @tap.native="inputFocus('goTop')"></x-input>
+      <x-input :title="$t('title')" :placeholder="$t('placeholder.required')" v-model="obj.title" @click.native="inputFocus('goTop')"></x-input>
 
       <PopupRadio :title="$t('type')" :placeholder="$t('placeholder.select')" :options="typeList" v-model="obj.type" value-align="left"></PopupRadio>
 
-      <x-input :title="$t('time')" v-if="obj.type.includes('活动')" :placeholder="$t('placeholder.required')" v-model="obj.time" @tap.native="inputFocus('goTop')"></x-input>
+      <x-input :title="$t('time')" v-if="obj.type.includes('活动')" :placeholder="$t('placeholder.required')" v-model="obj.time" @click.native="inputFocus('goTop')"></x-input>
 
-      <x-input :title="$t('address')" v-if="obj.type.includes('活动')" :placeholder="$t('placeholder.required')" v-model="obj.address" @tap.native="inputFocus('goTop')"></x-input>
+      <x-input :title="$t('address')" v-if="obj.type.includes('活动')" :placeholder="$t('placeholder.required')" v-model="obj.address" @click.native="inputFocus('goTop')"></x-input>
 
       <div class="text-wrap">
         <Tinymce ref="tinymce" v-model="obj.contnet" :toolbar="[]" :menubar="''" :height="180" :placeholder="$t('placeholder.share')"/>
@@ -25,7 +25,7 @@
         <div class="img-item"
         v-for="(item,index) in imgSrcs" :key="index"
         :style="{'background-image':`url(${item})`}"
-        @tap="removeSrc(index)">
+        @click="removeSrc(index)">
           <i class="iconfont icon-offline"></i>
         </div>
         <div class="add-img">
@@ -35,15 +35,15 @@
       </div>
 
       <div class="toolbar-row">
-        <div :class="['toolbar-item',{on:toggleIndex==0}]" @tap="setToggleIndex(0)">
+        <div :class="['toolbar-item',{on:toggleIndex==0}]" @click="setToggleIndex(0)">
           <p><i class="iconfont icon-smile"></i></p>
           <p>{{$t('emoticons')}}</p>
         </div>
-        <div :class="['toolbar-item',{on:toggleIndex==1}]" @tap="setToggleIndex(1)">
+        <div :class="['toolbar-item',{on:toggleIndex==1}]" @click="setToggleIndex(1)">
           <p><i class="iconfont icon-callperson"></i></p>
           <p>{{$t('callfriend')}}</p>
         </div>
-        <div :class="['toolbar-item',{on:toggleIndex==2}]" @tap="setToggleIndex(2)">
+        <div :class="['toolbar-item',{on:toggleIndex==2}]" @click="setToggleIndex(2)">
           <p><i class="iconfont icon-link"></i></p>
           <p>{{$t('link')}}</p>
         </div>
@@ -59,7 +59,7 @@
                 <SwiperItem v-for="(list,index) in eObj.list" :key="index">
                   <div class="emoticons-wrap">
                     <div class="item" v-for="(src,i) in list" :key="i">
-                      <img :src="src" @tap="insertEmoticon(src)" alt="">
+                      <img :src="src" @click="insertEmoticon(src)" alt="">
                     </div>
                   </div>
                 </SwiperItem>
@@ -67,7 +67,7 @@
             </transition-group>
           </div>
           <div class="select-emoticons">
-            <div :class="['item',{on:index==emoticonsIndex}]" v-for="(item,index) in emoticons" :key="index" @tap="emoticonsIndex=index">
+            <div :class="['item',{on:index==emoticonsIndex}]" v-for="(item,index) in emoticons" :key="index" @click="emoticonsIndex=index">
               <img :src="item.icon" alt="">
             </div>
           </div>
@@ -76,8 +76,8 @@
         <div class="toggle-item" v-show="toggleIndex==1" :key="1">
           <div>
             <div class="p-input-wrap">
-              <input type="text" class="p-input" :placeholder="$t('placeholder.username')" v-model="callUser" @tap="inputFocus('goBottom')">
-              <XButton type="primary" mini @tap.native="insertCallUser">@{{$t('add')}}</XButton>
+              <input type="text" class="p-input" :placeholder="$t('placeholder.username')" v-model="callUser" @click="inputFocus('goBottom')">
+              <XButton type="primary" mini @click.native="insertCallUser">@{{$t('add')}}</XButton>
             </div>
             <p class="b-tip">{{$t('remindFriend')}}</p>
           </div>
@@ -86,13 +86,13 @@
         <div class="toggle-item" v-show="toggleIndex==2" :key="2">
           <div>
             <div class="p-input-wrap">
-              <input type="text" class="p-input" :placeholder="$t('placeholder.linkWebsite')" v-model="linkHref" @tap="inputFocus('goBottom')">
+              <input type="text" class="p-input" :placeholder="$t('placeholder.linkWebsite')" v-model="linkHref" @click="inputFocus('goBottom')">
             </div>
             <div class="p-input-wrap">
-              <input type="text" class="p-input" :placeholder="$t('placeholder.linkText')" v-model="linkName" @tap="inputFocus('goBottom')">
+              <input type="text" class="p-input" :placeholder="$t('placeholder.linkText')" v-model="linkName" @click="inputFocus('goBottom')">
             </div>
             <div class="p-input-wrap no-border">
-              <XButton type="primary" mini @tap.native="insertLink">{{$t('insert')}}</XButton>
+              <XButton type="primary" mini @click.native="insertLink">{{$t('insert')}}</XButton>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@
       </div>
 
       <div class="but-row">
-        <XButton type="primary" @tap.native="submitData">{{$t('publishBut')}}</XButton>
+        <XButton type="primary" @click.native="submitData">{{$t('publishBut')}}</XButton>
       </div>
 
     </group>
@@ -114,10 +114,9 @@
   import {imgToBase64} from '@/utils'
   import {emoticons} from '@/data'
   import resizeHandler from '@/utils/resizeHandler'
-  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components: { Tab,TabItem,XInput,Group,XButton,Cell,PopupRadio,Tinymce,Swiper,SwiperItem },
-    mixins: [resizeHandler,iScroll],
+    mixins: [resizeHandler],
     data(){
       return{
         obj:{
@@ -170,12 +169,12 @@
         wrap.scrollTop = wrap.scrollHeight;
       },
       _keyboardShow(){//显示键盘
-        let func = this[this.resizePosY];
-        typeof func == 'function' && setTimeout(func,100);
+        // let func = this[this.resizePosY];
+        // typeof func == 'function' && setTimeout(func,100);
       },
       _keyboardHide(){//收起键盘
-        let func = this[this.resizePosY];
-        typeof func == 'function' && setTimeout(func,100);
+        // let func = this[this.resizePosY];
+        // typeof func == 'function' && setTimeout(func,100);
       },
       setToggleIndex(index){
         this.toggleIndex = index;

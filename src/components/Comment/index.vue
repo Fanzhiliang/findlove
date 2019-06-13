@@ -23,7 +23,7 @@
           </div>
           <div class="bottom-row">
             <span class="time">2019-05-16 10:04</span>
-            <i class="iconfont icon-warn" @click="report"></i>
+            <i class="iconfont icon-warn" @tap="report"></i>
             <i class="iconfont icon-chatbubbleoutline"></i>
             <i class="iconfont icon-heart1">20</i>
           </div>
@@ -44,7 +44,7 @@
           </div>
           <div class="bottom-row">
             <span class="time">2019-05-16 10:04</span>
-            <i class="iconfont icon-warn" @click="report"></i>
+            <i class="iconfont icon-warn" @tap="report"></i>
             <i class="iconfont icon-chatbubbleoutline"></i>
             <i class="iconfont icon-heart1">0</i>
           </div>
@@ -72,7 +72,7 @@
           </div>
           <div class="bottom-row">
             <span class="time">2019-05-16 10:04</span>
-            <i class="iconfont icon-warn" @click="report"></i>
+            <i class="iconfont icon-warn" @tap="report"></i>
             <i class="iconfont icon-chatbubbleoutline"></i>
             <i class="iconfont icon-heart1">777</i>
           </div>
@@ -82,7 +82,7 @@
     </div>
     <!-- 底部 -->
     <div class="comment-ctrl">
-      <div class="goEdit" @click="isShowReply=true">
+      <div class="goEdit" @tap="isShowReply=true">
         <i class="iconfont icon-edit1"></i>说说你的看法...
       </div>
       <div class="icon-item">
@@ -91,13 +91,13 @@
       <div class="icon-item">
         <i class="iconfont icon-heart1"></i><span>777</span>
       </div>
-      <div class="icon-item" @click="isShowShare=true">
+      <div class="icon-item" @tap="isShowShare=true">
         <i class="iconfont icon-share"></i>
       </div>
     </div>
     <!-- 回复框 -->
     <div :class="['reply',{on:isShowReply}]">
-      <div class="reply-header">回复<i class="iconfont icon-close" @click="isShowReply=false"></i>
+      <div class="reply-header">回复<i class="iconfont icon-close" @tap="isShowReply=false"></i>
       </div>
       <div class="reply-content">
         <div class="text-wrap">
@@ -105,11 +105,11 @@
         </div>
       </div>
       <div class="toolbar-row">
-        <div :class="['toolbar-item',{on:toggleIndex==0}]" @click="setToggleIndex(0)">
+        <div :class="['toolbar-item',{on:toggleIndex==0}]" @tap="setToggleIndex(0)">
           <p><i class="iconfont icon-smile"></i></p>
           <p>表情</p>
         </div>
-        <div :class="['toolbar-item',{on:toggleIndex==1}]" @click="setToggleIndex(1)">
+        <div :class="['toolbar-item',{on:toggleIndex==1}]" @tap="setToggleIndex(1)">
           <p><i class="iconfont icon-image"></i></p>
           <p>图片</p>
         </div>
@@ -119,7 +119,7 @@
         <!-- 选择表情 -->
         <div class="toggle-item" v-show="toggleIndex==0" :key="0">
           <div class="select-emoticons">
-            <div :class="['item',{on:index==emoticonsIndex}]" v-for="(item,index) in emoticons" :key="index" @click="emoticonsIndex=index">
+            <div :class="['item',{on:index==emoticonsIndex}]" v-for="(item,index) in emoticons" :key="index" @tap="emoticonsIndex=index">
               <img :src="item.icon" alt="">
             </div>
           </div>
@@ -129,7 +129,7 @@
                 <SwiperItem v-for="(list,index) in eObj.list" :key="index">
                   <div class="emoticons-wrap">
                     <div class="item" v-for="(src,i) in list" :key="i">
-                      <img :src="src" @click="insertEmoticon(src)" alt="">
+                      <img :src="src" @tap="insertEmoticon(src)" alt="">
                     </div>
                   </div>
                 </SwiperItem>
@@ -143,7 +143,7 @@
             <div class="img-item"
             v-for="(item,index) in imgSrcs" :key="index"
             :style="{'background-image':`url(${item})`}"
-            @click="removeSrc(index)">
+            @tap="removeSrc(index)">
               <i class="iconfont icon-offline"></i>
             </div>
             <div class="add-img">
@@ -155,12 +155,12 @@
         </transition-group>
       </div>
       <div class="but-row">
-        <XButton type="primary" @click.native="submitData">发表</XButton>
+        <XButton type="primary" @tap.native="submitData">发表</XButton>
       </div>
     </div>
     <!-- 分享 -->
-    <div :class="['share',{on:isShowShare}]" @click="isShowShare=false">
-      <div class="share-main" @click.stop="">
+    <div :class="['share',{on:isShowShare}]" @tap="isShowShare=false">
+      <div class="share-main" @tap.stop="">
         <div class="share-item">
           <div class="top"><img src="http://findloveimg.alcyh.com/qq.svg" alt=""></div>
           <p>QQ</p>
@@ -173,7 +173,7 @@
           <div class="top"><img src="http://findloveimg.alcyh.com/weibo.svg" alt=""></div>
           <p>微博</p>
         </div>
-        <div class="share-button" @click="isShowShare=false">取消</div>
+        <div class="share-button" @tap="isShowShare=false">取消</div>
       </div>
     </div>
   </div>

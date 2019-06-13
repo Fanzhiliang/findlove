@@ -73,7 +73,7 @@
   import {mapGetters} from 'vuex'
   import {Group,Cell,XDialog,PopupPicker} from 'vux'
   import {langList} from '@/lang'
-  
+
   export default {
     components: {Group,Cell,XDialog,PopupPicker},
     data(){

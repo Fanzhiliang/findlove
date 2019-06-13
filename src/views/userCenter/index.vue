@@ -12,7 +12,7 @@
       <div class="bottom-bg bg2"></div>
     </div>
 
-    <ScrollTab v-model="tabIndex" :list="tabList" :scrollTop="tabLimit" :fixedTop="'2.3rem'"/>
+    <ScrollTab v-model="tabIndex" :list="tabList" :scrollTop.sync="tabLimit" :fixedTop="'2.3rem'"/>
 
     <component :is="tabList[tabIndex].component"></component>
 
@@ -40,10 +40,8 @@
   import msg from './components/msg'
   import follow from './components/follow'
   import ScrollTab from '@/components/ScrollTab'
-  import iScroll from '@/utils/IScroll/index.js'
   export default {
     components: {Tab,TabItem,Group,Cell,XDialog,info,post,photo,friend,msg,follow,ScrollTab},
-    mixins: [iScroll],
     data(){
       return{
         path: '',
@@ -80,7 +78,9 @@
       }
     },
     mounted(){
-      this.tabLimit = document.querySelector('.userCenter .userInfo').clientHeight;
+      this.$nextTick(()=>{
+        this.tabLimit = document.querySelector('.userCenter .userInfo').clientHeight*3;
+      })
     }
   }
 </script>

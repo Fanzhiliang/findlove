@@ -43,7 +43,7 @@ Vue.use(VueLazyload, {
   error: src404,
   loading: srcloading
 })
-//图标
+//svg图标
 import './icons'
 //rem
 import './utils/rem.js'

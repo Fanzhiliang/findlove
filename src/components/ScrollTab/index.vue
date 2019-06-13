@@ -1,8 +1,9 @@
 <template>
-  <div :style="{height}">
+  <div :style="{height}" @mousemove.stop="" @mousedown.stop="" @touchmove.stop="" @touchstart.stop="" @click.stop="" @tap.stop="" @mousewheel.stop="" @scroll.stop="" @wheel.stop="" @animationend.stop="" @transitionend.stop="" @pointerdown.stop="" @resize.stop="">
+    <!-- 阻止pointerdown是为了避免冒泡触发父组件的iScroll插件 -->
     <div class="tab-wrap" :style="stickyStyle"
     @mousemove.prevent="dragHandler" @touchmove.prevent="dragHandler" @mouseleave.prevent="endDrag"
-      @mousedown.prevent="startDrag" @touchstart.prevent="startDrag" 
+      @mousedown.prevent="startDrag" @touchstart.prevent="startDrag"
           @mouseup.prevent="endDrag" @touchend.prevent="endDrag">
       <div class="tab-inner" :style="tabStyle">
         <tab :scroll-threshold="list.length" prevent-default v-model="tabIndex" @on-before-index-change="switchTabItem">
@@ -53,6 +54,9 @@
         posX: 0,
         moveDist: 0,
         isMoved: false,//是否移动过
+        iScrollTop: 0,//如果使用iScroll的滚动距离
+        isHideBar: false,//是否隐藏
+
       }
     },
     computed:{
@@ -70,6 +74,8 @@
           left: 0,
           width: '100%',
           height: (parseInt(this.height)-2)+'px',
+          marginTop: this.iScrollTop>0?'calc('+this.iScrollTop+'px - '+this.fixedTop+')':'',
+          opacity: this.isHideBar?0:1,
         }:{}
       }
     },
@@ -87,14 +93,31 @@
         this.$emit('input',index);
         this.$emit('on-before-index-change',index);
       },
-      scrollHandler(e){
+      scrollHandler(e){//普通滚动事件
         this.isTabSticky = this.scrollWrap.scrollTop >= this.scrollTop;
+      },
+      theIScrollHandler(){//使用了iscroll插件滚动事件
+        let transformValue = this.scrollWrap.children[0].style.transform;
+        if(transformValue.includes(', ')){
+          let scrollTop = transformValue.split(', ')[1].split('px) ')[0];
+          this.iScrollTop = -parseFloat(scrollTop);
+          this.isTabSticky = this.iScrollTop >= this.scrollTop;
+        }
       },
       init(){
         this.scrollWrap = document.querySelector(this.scrollEl);
         if(this.scrollWrap){
           this.scrollWrap.addEventListener('scroll',this.scrollHandler);
         }
+        //下面两个事件逻辑有点乱
+        this.$parent._setIScrollBarScroll && this.$parent._setIScrollBarScroll(() => {
+          this.theIScrollHandler();//需要先判断出isTabSticky
+          this.isHideBar = this.isTabSticky;//根据isTabSticky判断是否显示
+        })
+        this.$parent._setIScrollBarScrollEnd && this.$parent._setIScrollBarScrollEnd(()=>{
+          this.isHideBar = false;//先显示
+          this.theIScrollHandler();//再定位
+        })
       },
       getPageX(e){//移动端touch事件e没有pageX值，需要判断获取pageX
         return typeof e.touches != 'undefined' && e.touches.length>0 ? e.touches[0].pageX : e.pageX;

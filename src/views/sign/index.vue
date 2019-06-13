@@ -34,7 +34,7 @@
         :type="ableSign?'primary':''"
         :plain="!ableSign"
         :disabled="!ableSign"
-        @tap.native="ableSign=false"
+        @click.native="ableSign=false"
       >{{ableSign?$t('sign'):$t('signed')}}</XButton>
     </div>
     <div class="flow-row">

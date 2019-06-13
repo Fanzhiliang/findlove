@@ -23,7 +23,7 @@ bgs.forEach(async (src)=>{
   console.log(base64Src)
 
   bgUrls.push(base64Src)
-  
+
 })
 
 export default bgUrls;

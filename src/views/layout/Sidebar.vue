@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <div class="userInfo" @tap="$router.push('/userCenter')">
+    <div class="userInfo" @click="$router.push('/userCenter')">
       <div class="top-row">
         <div class="head-wrap">
           <img src="http://findloveimg.alcyh.com/default-head.gif" alt="">
@@ -11,14 +11,15 @@
       </div>
       <div class="bottom-row">
         <p class="ellipsis textShadowBlack">祝你早日暴富，生活愉快</p>
-        <span @tap.stop="logout"><i class="iconfont icon-enter"></i>{{$t('logout')}}</span>
+        <span @click.stop="logout"><i class="iconfont icon-enter"></i>{{$t('logout')}}</span>
       </div>
       <div class="bottom-bg bg1"></div>
       <div class="bottom-bg bg2"></div>
     </div>
+
     <div class="router-list">
       <div class="list-inner">
-        <div class="router-row" v-for="item in routerList" :key="item.name" @tap="geRouter(item.path)">
+        <div class="router-row" v-for="item in routerList" :key="item.name" @click="geRouter(item.path)">
           <i :class="['iconfont','icon-'+item.icon]" :style="{color:item.color}"></i><span>{{item.name}}</span>
         </div>
       </div>
